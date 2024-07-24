@@ -6,6 +6,7 @@ import { Errors, Parameters } from "../types";
 export default function ContactForm() {
     const [parameters, setParameters] = useState({
       name: "",
+      email: "",
       prefix: "",
       phone: "",
       contactedBy: "",
@@ -14,6 +15,7 @@ export default function ContactForm() {
   
     const [error, setError] = useState({
       name: false,
+      email: false,
       prefix: false,
       phone: false,
       contactedBy: false,
@@ -30,6 +32,7 @@ export default function ContactForm() {
     const resetErrors = () => {
       setError({
         name: false,
+        email: false,
         prefix: false,
         phone: false,
         contactedBy: false,
@@ -41,6 +44,7 @@ export default function ContactForm() {
     const resetAll = () => {  
       setParameters({
         name: "",
+        email: "",
         prefix: "",
         phone: "",
         contactedBy: "",
@@ -52,14 +56,14 @@ export default function ContactForm() {
     
     const validateForm = async () => {
       resetErrors();
-      const requiredFields: (keyof Parameters)[] = ["name", "prefix", "phone", "contactedBy", "coName"];
+      const requiredFields: (keyof Parameters)[] = ["name", "email", "prefix", "phone", "contactedBy", "coName"];
       let fieldsCompleted = true;
       
-      const newErrors = {name: false, prefix: false, phone: false, contactedBy: false, coName: false, count: 0};
+      const newErrors = {name: false, email: false, prefix: false, phone: false, contactedBy: false, coName: false, count: 0};
       for (const key of requiredFields) {
         if (parameters[key] === "") {
           if(key === "coName" && parameters.contactedBy === "person"){
-            console.log("Exception case: when contacted by person, there is no organization name.")
+            console.log("Exception case: when contacted by person, there is no organization name required.")
           } else{
             newErrors[key] = true;
             fieldsCompleted = false;
@@ -113,6 +117,20 @@ export default function ContactForm() {
                             type="text"
                             name="name"
                             value={parameters.name}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div className="mb-4">
+                        <label className="font-medium text-black">
+                            e-mail
+                        </label>
+                        <input
+                            className="px-2 pb-1 mt-1 w-full font-bold text-black"
+                            id="email"
+                            type="email"
+                            name="email"
+                            value={parameters.email}
                             onChange={handleChange}
                         />
                     </div>
@@ -184,7 +202,7 @@ export default function ContactForm() {
                           <span className="ml-2 text-sm font-bold">Organization</span>
                         </label>
                       </div>
-                      <span className={error.contactedBy? "text-xs text-red": "hidden"}>This field is required</span>
+                      <span className={error.contactedBy? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
                     </div>
 
                     <div className={parameters.contactedBy === "organization" ? "" : "hidden"}>

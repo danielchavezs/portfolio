@@ -1,5 +1,6 @@
 export interface Parameters {
     name: string;
+    email: string,
     prefix: string;
     phone: string;
     contactedBy: string,
