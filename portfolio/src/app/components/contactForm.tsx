@@ -131,7 +131,7 @@ export default function ContactForm() {
                             Name
                         </label>
                         <input
-                            className="px-2 pb-1 mt-1 w-full font-bold  rounded-sm"
+                            className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
                             id="name"
                             type="text"
                             name="name"
@@ -145,7 +145,7 @@ export default function ContactForm() {
                             e-mail
                         </label>
                         <input
-                            className="px-2 pb-1 mt-1 w-full font-bold  rounded-sm"
+                            className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
                             id="email"
                             type="email"
                             name="email"
@@ -160,7 +160,7 @@ export default function ContactForm() {
                               Prefix
                           </label>
                           <input
-                              className="px-2 pb-1 mt-1 w-20 font-bold  rounded-sm"
+                              className="px-2 pb-1 mt-1 w-20 font-bold text-black rounded-sm"
                               id="prefix"
                               type="number"
                               name="prefix"
@@ -174,7 +174,7 @@ export default function ContactForm() {
                               Phone
                           </label>
                           <input
-                              className="px-2 pb-1 mt-1 w-full font-bold  rounded-sm"
+                              className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
                               id="phone"
                               type="number"
                               name="phone"
@@ -226,7 +226,7 @@ export default function ContactForm() {
                             {/* <span className="text-xs text-gray-700">(optional)</span> */}
                         </label>
                         <input
-                            className="px-2 pb-1 mt-1 w-full font-bold  rounded-sm"
+                            className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
                             id="coName"
                             type="text"
                             name="coName"
@@ -240,7 +240,7 @@ export default function ContactForm() {
                             Message
                         </label>
                         <textarea
-                            className="px-2 mt-1 w-full min-h-24 h-fit font-bold  rounded-sm"
+                            className="px-2 mt-1 w-full min-h-24 h-fit font-bold text-black rounded-sm"
                             id="message"
                             name="message"
                             value={parameters.message}

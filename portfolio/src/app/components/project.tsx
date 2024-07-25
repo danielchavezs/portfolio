@@ -3,7 +3,7 @@ import { ProjectType } from "../assets/types";
 
 
 export default function ProjectComponent({ id, name, images, description }: ProjectType) {
-  const img = images[0];
+  const img = images[1];
 
     return (
         <div className="m-6 border-2">
