@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
 import contactFormAction from "../actions/contactFormAction";
-import { Errors, Parameters } from "../types";
+import { Errors, Parameters } from "../assets/types";
 // const { MAIL_ACCESS_KEY } = process.env;
 
 export default function ContactForm() {
@@ -127,11 +127,11 @@ export default function ContactForm() {
                 </div>
 
                     <div className="mb-4">
-                        <label className="font-medium text-black">
+                        <label className="font-medium ">
                             Name
                         </label>
                         <input
-                            className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
+                            className="px-2 pb-1 mt-1 w-full font-bold  rounded-sm"
                             id="name"
                             type="text"
                             name="name"
@@ -141,11 +141,11 @@ export default function ContactForm() {
                     </div>
 
                     <div className="mb-4">
-                        <label className="font-medium text-black">
+                        <label className="font-medium ">
                             e-mail
                         </label>
                         <input
-                            className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
+                            className="px-2 pb-1 mt-1 w-full font-bold  rounded-sm"
                             id="email"
                             type="email"
                             name="email"
@@ -156,11 +156,11 @@ export default function ContactForm() {
 
                     <div className="flex flex-row justify-between space-x-8">
                       <div className="flex flex-col">
-                          <label className="font-medium text-black">
+                          <label className="font-medium ">
                               Prefix
                           </label>
                           <input
-                              className="px-2 pb-1 mt-1 w-20 font-bold text-black rounded-sm"
+                              className="px-2 pb-1 mt-1 w-20 font-bold  rounded-sm"
                               id="prefix"
                               type="number"
                               name="prefix"
@@ -170,11 +170,11 @@ export default function ContactForm() {
                       </div>
 
                       <div className="flex flex-col">
-                          <label className="font-medium text-black">
+                          <label className="font-medium ">
                               Phone
                           </label>
                           <input
-                              className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
+                              className="px-2 pb-1 mt-1 w-full font-bold  rounded-sm"
                               id="phone"
                               type="number"
                               name="phone"
@@ -221,12 +221,12 @@ export default function ContactForm() {
                     </div>
 
                     <div className={parameters.contactedBy === "organization" ? "" : "hidden"}>
-                        <label className="font-medium text-black">
+                        <label className="font-medium ">
                             Company´s Name 
                             {/* <span className="text-xs text-gray-700">(optional)</span> */}
                         </label>
                         <input
-                            className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
+                            className="px-2 pb-1 mt-1 w-full font-bold  rounded-sm"
                             id="coName"
                             type="text"
                             name="coName"
@@ -236,11 +236,11 @@ export default function ContactForm() {
                     </div>
 
                     <div className="mb-4">
-                        <label className="font-medium text-black">
+                        <label className="font-medium ">
                             Message
                         </label>
                         <textarea
-                            className="px-2 mt-1 w-full min-h-24 h-fit font-bold text-black rounded-sm"
+                            className="px-2 mt-1 w-full min-h-24 h-fit font-bold  rounded-sm"
                             id="message"
                             name="message"
                             value={parameters.message}

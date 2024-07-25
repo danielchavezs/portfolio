@@ -1,8 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
 import ContactForm from "./components/contactForm";
+import ProjectComponent from "./components/project";
+import { projects } from "./assets/seed";
+import { ProjectType } from "./assets/types";
+
 
 export default function Home() {
+  const project1: ProjectType = projects[0];
+  const { id, name, images, description } = project1; 
+
+
   return (
     <main className="flex min-h-screen flex-col items-center p-12">
         <h1 className="flex text-3xl font-extrabold mb-2"> DANIEL CHAVEZ </h1>
@@ -25,6 +31,12 @@ export default function Home() {
             <ul> Tailwind CSS </ul>               
         </div>
       <ContactForm/>
+      <ProjectComponent 
+        id={id} 
+        name={name} 
+        images={images} 
+        description={description}
+        />
     </main>
   );
 }

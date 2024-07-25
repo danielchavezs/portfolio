@@ -20,4 +20,18 @@ export interface Results {
     toDisplay: string;
     totalPayment: string;
     solved: boolean;
-  }
+}
+
+export type ProjectType = {
+    id: number;
+    name: string;
+    images: string[];
+    description: string;
+}
+
+export type ProjectsType = ProjectType[]
+
+export interface ProjectImageProps {
+  src: string;
+  alt: string;
+}
