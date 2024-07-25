@@ -22,6 +22,9 @@ const config: Config = {
       textColor: {
         white: '#ffffff',
       },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'sans-serif']
+      },
     },
   },
   plugins: [],

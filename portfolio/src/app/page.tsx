@@ -17,6 +17,7 @@ export default function Home() {
             <ul> Jest </ul>
             <ul> PostgreSQL </ul>
             <ul> Sequelize </ul>
+            <ul> HTML5 </ul>
             <ul> React </ul>
             <ul> Next.js </ul>
             <ul> Redux </ul>

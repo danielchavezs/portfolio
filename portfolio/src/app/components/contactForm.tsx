@@ -2,7 +2,7 @@
 import { useState } from "react";
 import contactFormAction from "../actions/contactFormAction";
 import { Errors, Parameters } from "../types";
-const { MAIL_ACCESS_KEY } = process.env;
+// const { MAIL_ACCESS_KEY } = process.env;
 
 export default function ContactForm() {
     const [parameters, setParameters] = useState({
