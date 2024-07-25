@@ -108,12 +108,23 @@ export default function ContactForm() {
     // console.log("PARAMETERS CATCHED: ", parameters);
     return (
         <div className="bg-sky-400 mt-10 flex flex-col items-center w-fit h-fit p-8 rounded-xl">
-            <h1 className="flex font-bold text-xl mb-5">Contact me:</h1>
+            {/* <h1 className="flex font-bold text-xl mb-5 ">Contact me:</h1> */}
             {/* <div className="bg-white flex lg:flex-row md:flex-col md:rounded-2xl sm:flex-col max-w-fit shadow-2xl lg:rounded-2xl"> */}
     
               <div className="flex justify-between">
 
                 <form onSubmit={handleSubmit}>
+                <div className="flex justify-between mb-8">
+                  <h2 className="text-xl font-extrabold"> Contact Me </h2>
+                  <button
+                    className="text-gray-200 font-semibold underline text-xs"
+                    type="button"
+                    onClick={resetAll}
+                  >
+                    {" "}
+                    Clear All
+                  </button>
+                </div>
 
                     <div className="mb-4">
                         <label className="font-medium text-black">
