@@ -1,0 +1,1 @@
+export const MAIL_ACCESS_KEY = "eaa633cc-efd4-4234-ad1f-60f07519b9d5"

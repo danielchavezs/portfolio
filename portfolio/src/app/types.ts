@@ -5,6 +5,7 @@ export interface Parameters {
     phone: string;
     contactedBy: string,
     coName: string;
+    message: string;
 }
   
 export type Errors = {

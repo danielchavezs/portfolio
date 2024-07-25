@@ -2,6 +2,7 @@
 import { useState } from "react";
 import contactFormAction from "../actions/contactFormAction";
 import { Errors, Parameters } from "../types";
+const { MAIL_ACCESS_KEY } = process.env;
 
 export default function ContactForm() {
     const [parameters, setParameters] = useState({
@@ -11,6 +12,7 @@ export default function ContactForm() {
       phone: "",
       contactedBy: "",
       coName: "",
+      message: ""
     });
   
     const [error, setError] = useState({
@@ -20,10 +22,11 @@ export default function ContactForm() {
       phone: false,
       contactedBy: false,
       coName: false,
+      message: false,
       count: 0
     });
   
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const property = event.target.name;
       let value = event.target.value;
       setParameters({ ...parameters, [property]: (value) });
@@ -37,6 +40,7 @@ export default function ContactForm() {
         phone: false,
         contactedBy: false,
         coName: false,
+        message: false,
         count: 0
       });
     };
@@ -49,6 +53,7 @@ export default function ContactForm() {
         phone: "",
         contactedBy: "",
         coName: "",
+        message: "",
       });
   
       resetErrors();
@@ -56,10 +61,10 @@ export default function ContactForm() {
     
     const validateForm = async () => {
       resetErrors();
-      const requiredFields: (keyof Parameters)[] = ["name", "email", "prefix", "phone", "contactedBy", "coName"];
+      const requiredFields: (keyof Parameters)[] = ["name", "email", "prefix", "phone", "contactedBy", "coName", "message"];
       let fieldsCompleted = true;
       
-      const newErrors = {name: false, email: false, prefix: false, phone: false, contactedBy: false, coName: false, count: 0};
+      const newErrors = {name: false, email: false, prefix: false, phone: false, contactedBy: false, coName: false, message: false, count: 0};
       for (const key of requiredFields) {
         if (parameters[key] === "") {
           if(key === "coName" && parameters.contactedBy === "person"){
@@ -86,17 +91,20 @@ export default function ContactForm() {
         return false;
       };
       try {
-        const { name, contactedBy, coName } = parameters;
+        const { name, contactedBy, coName, message } = parameters;
         const phone = Number(parameters.phone);
         const prefix = Number(parameters.prefix)
   
-        const res = contactFormAction(name, prefix, phone, contactedBy, coName);
-        // setResults(res);
+        const res = await contactFormAction(name, prefix, phone, contactedBy, coName, message);
+        console.log("Results in client side: ", res);
+
+        if(res.success){
+          window.alert(res.message);
+        };
       } catch (err) {
         window.alert(error);
       }
     };
-
     // console.log("PARAMETERS CATCHED: ", parameters);
     return (
         <div className="bg-sky-400 mt-10 flex flex-col items-center w-fit h-fit p-8 rounded-xl">
@@ -112,7 +120,7 @@ export default function ContactForm() {
                             Name
                         </label>
                         <input
-                            className="px-2 pb-1 mt-1 w-full font-bold text-black"
+                            className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
                             id="name"
                             type="text"
                             name="name"
@@ -126,7 +134,7 @@ export default function ContactForm() {
                             e-mail
                         </label>
                         <input
-                            className="px-2 pb-1 mt-1 w-full font-bold text-black"
+                            className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
                             id="email"
                             type="email"
                             name="email"
@@ -141,7 +149,7 @@ export default function ContactForm() {
                               Prefix
                           </label>
                           <input
-                              className="px-2 pb-1 mt-1 w-20 font-bold text-black"
+                              className="px-2 pb-1 mt-1 w-20 font-bold text-black rounded-sm"
                               id="prefix"
                               type="number"
                               name="prefix"
@@ -155,7 +163,7 @@ export default function ContactForm() {
                               Phone
                           </label>
                           <input
-                              className="px-2 pb-1 mt-1 w-full font-bold text-black"
+                              className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
                               id="phone"
                               type="number"
                               name="phone"
@@ -172,9 +180,7 @@ export default function ContactForm() {
                       </label>
   
                       <div className="flex flex-col items-start">
-                        <label className=""
-                          // {parameters.contactedBy === "person" ? radioSelectedLabel: radioLabels}
-                        >
+                        <label className="">
                           <input
                             type="radio"
                             className="form-radio"
@@ -187,9 +193,7 @@ export default function ContactForm() {
                           <span className="ml-2 text-sm font-bold">Person</span>
                         </label> 
 
-                        <label className=""
-                          // {parameters.contactedBy === "organization" ? radioSelectedLabel: radioLabels}
-                        >
+                        <label className="">
                           <input
                             type="radio"
                             className="form-radio"
@@ -211,11 +215,24 @@ export default function ContactForm() {
                             {/* <span className="text-xs text-gray-700">(optional)</span> */}
                         </label>
                         <input
-                            className="px-2 pb-1 mt-1 w-full font-bold text-black"
+                            className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
                             id="coName"
                             type="text"
                             name="coName"
                             value={parameters.coName}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div className="mb-4">
+                        <label className="font-medium text-black">
+                            Message
+                        </label>
+                        <textarea
+                            className="px-2 mt-1 w-full min-h-24 h-fit font-bold text-black rounded-sm"
+                            id="message"
+                            name="message"
+                            value={parameters.message}
                             onChange={handleChange}
                         />
                     </div>
