@@ -19,20 +19,18 @@ export default function ProjectComponent({ id, name, images, description }: Proj
             setButtonName("Mobile View");
         }
     };
-    console.log(img, buttonName);
 
     return (
-        <div className="m-6 border-2">
+        <div className="border-2 p-6 space-y-3 rounded-md">
             <h3 className="font-semibold text-xl text-center">{id} - {name}</h3>
             <div>
                 <ProjectImage alt={name} src={img}/>
-                <button onClick={changeImage} className="bg-slate-500 rounded-md p-2 ml-6 hover:bg-slate-400">
-                    {buttonName}
-                </button>
                 {/* <ProjectImage alt={name} src={img2}/> */}
             </div>
+            <button onClick={changeImage} className="bg-slate-500 rounded-md p-2 hover:bg-slate-400">
+                    {buttonName}
+            </button>
             <p><strong>Description: </strong>{description}</p>
-            
         </div>
     )
 };

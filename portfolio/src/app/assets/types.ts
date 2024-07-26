@@ -29,6 +29,8 @@ export type ProjectType = {
     description: string;
 }
 
+// export type ProjectProps = ProjectType{};
+
 export type ProjectsType = ProjectType[]
 
 export interface ProjectImageProps {

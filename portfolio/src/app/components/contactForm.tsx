@@ -107,7 +107,7 @@ export default function ContactForm() {
     };
     // console.log("PARAMETERS CATCHED: ", parameters);
     return (
-        <div className="bg-sky-400 mt-10 flex flex-col items-center w-fit h-fit p-8 rounded-xl">
+        <div className="bg-slate-700 mt-10 flex flex-col items-center w-fit h-fit p-8 rounded-xl">
             {/* <h1 className="flex font-bold text-xl mb-5 ">Contact me:</h1> */}
             {/* <div className="bg-white flex lg:flex-row md:flex-col md:rounded-2xl sm:flex-col max-w-fit shadow-2xl lg:rounded-2xl"> */}
     
@@ -251,7 +251,7 @@ export default function ContactForm() {
                   {/* <div className=""> */}
                     <button
                       type="submit"
-                      className="lg:w-60 md:w-64 mt-8 flex font-bold text-sm bg-yellow-500 py-2 pl-12 pr-6 sm:place-content-center sm:px-0 rounded-3xl hover:bg-ligthlime sm:w-full hover:bg-yellow-400"
+                      className="bg-slate-500 rounded-md p-2 hover:bg-slate-400"
                     >
                       {/* <CalculatorIcon/> puede ser un logo de mail */}
                       {" "}

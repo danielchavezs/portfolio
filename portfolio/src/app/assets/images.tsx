@@ -10,11 +10,11 @@ export function ProjectImage ({src, alt}: ProjectImageProps){
         width={850}
         height={300}
         style={{
-            padding: '1.5rem',  // Padding migth not be necessary once I hide the border from the surrounding div.
+            // padding: '1.5rem',  // Padding migth not be necessary once I hide the border from the surrounding div.
             maxWidth: '850px',
             width: '100%',
             height: 'auto',
-            borderRadius: '30px'
+            borderRadius: '8px'
         }}
         />
     )
