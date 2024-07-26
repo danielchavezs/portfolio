@@ -1,5 +1,5 @@
 import ContactForm from "./components/contactForm";
-import ProjectComponent from "./components/project";
+import ProjectComponent from "./components/projectComponent";
 import { projects } from "./assets/seed";
 import { ProjectType } from "./assets/types";
 
@@ -30,13 +30,13 @@ export default function Home() {
             <ul> CSS </ul>
             <ul> Tailwind CSS </ul>               
         </div>
-      <ContactForm/>
       <ProjectComponent 
         id={id} 
         name={name} 
         images={images} 
         description={description}
         />
+        <ContactForm/>
     </main>
   );
 }

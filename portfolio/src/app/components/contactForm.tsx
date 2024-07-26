@@ -251,7 +251,7 @@ export default function ContactForm() {
                   {/* <div className=""> */}
                     <button
                       type="submit"
-                      className="lg:w-60 md:w-64 mt-8 flex font-bold text-sm bg-yellow-500 py-2 pl-12 pr-6 sm:place-content-center sm:px-0 rounded-3xl hover:bg-ligthlime sm:w-full"
+                      className="lg:w-60 md:w-64 mt-8 flex font-bold text-sm bg-yellow-500 py-2 pl-12 pr-6 sm:place-content-center sm:px-0 rounded-3xl hover:bg-ligthlime sm:w-full hover:bg-yellow-400"
                     >
                       {/* <CalculatorIcon/> puede ser un logo de mail */}
                       {" "}
