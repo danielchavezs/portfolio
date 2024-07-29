@@ -13,6 +13,7 @@ export default function ProjectsContainer ({projects}: {projects: ProjectsType})
                         name={proj.name}
                         images={proj.images}
                         description={proj.description}
+                        href={proj.href}
                     />
                 );
             })}

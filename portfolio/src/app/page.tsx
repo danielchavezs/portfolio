@@ -6,8 +6,6 @@ import ProjectsContainer from "./components/projectsContainer";
 
 
 export default function Home() {
-  // const project1: ProjectType = projects[0];
-  // const { id, name, images, description } = project1; 
 
   return (
     <main className="flex min-h-screen flex-col items-center p-12">
@@ -15,7 +13,6 @@ export default function Home() {
         <p>Engineer & Full Stack Developer based on <code>JavaScript</code> technologies.</p>
 
         <div className= "flex flex-col justify-items-start w-full border-2 border-slate-500 mt-2 rounded-md">
-          {/* <h2 className="flex font-bold">About me:</h2> */}
           <h2 className="flex font-bold m-6 ml-0">My Stack:</h2>
             <div className="grid-cols-3 gap-4">
               <ul> JavaScript </ul>
@@ -33,12 +30,6 @@ export default function Home() {
             </div>
         </div>
         <ProjectsContainer projects={projects} />
-      {/* <ProjectComponent 
-        id={id} 
-        name={name} 
-        images={images} 
-        description={description}
-        /> */}
         <ContactForm/>
     </main>
   );

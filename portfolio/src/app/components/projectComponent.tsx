@@ -3,8 +3,7 @@ import { useState } from "react";
 import { ProjectImage } from "../assets/images";
 import { ProjectType } from "../assets/types";
 
-
-export default function ProjectComponent({ id, name, images, description }: ProjectType) {
+export default function ProjectComponent({ id, name, images, description, href }: ProjectType) {
 
     const [showing, setShowing] = useState({
         description: {
@@ -59,24 +58,25 @@ export default function ProjectComponent({ id, name, images, description }: Proj
     };
 
     return (
-        <div className="flex flex-row p-4 rounded-md space-x-2 border-slate-500 hover:border-2">
+        <div 
+            className="flex flex-col p-4 rounded-md space-x-2 border-slate-500 hover:border-2"
+            onMouseEnter={showDescription}
+            onMouseLeave={showDescription}
+            // onMouseEnter={() => setShowing((prev) => ({ ...prev, description: { ...prev.description, visible: true } }))}
+            // onMouseLeave={() => setShowing((prev) => ({ ...prev, description: { ...prev.description, visible: false } }))}
+        >
             <div className="space-y-3">
                 <h3 className="font-semibold text-xl text-center">{id} - {name}</h3>
                 <div>
-                    <ProjectImage alt={name} src={showing.view.img}/>
-                    {/* <ProjectImage alt={name} src={img2}/> */}
+                    <ProjectImage alt={name} src={showing.view.img} href={href}/>
                 </div>
-                <button onClick={changeImage} className="bg-slate-500 rounded-md p-2 hover:bg-slate-400">
-                    {showing.view.buttonName}
-                </button>
-                <button onClick={showDescription} className="ml-2 bg-slate-500 rounded-md p-2 hover:bg-slate-400">
-                    {showing.description.buttonName}
-                </button>
+                    <button onClick={changeImage} className="text-xs bg-slate-500 rounded-md p-1 hover:bg-slate-400">
+                        {showing.view.buttonName}
+                    </button>
             </div>
-            <div className={showing.description.visible ? "" : "hidden"}>
-                <h4><strong>Description: </strong></h4>
+            
+            <div className={`mt-4 transition-all duration-500 ease-in-out ${showing.description.visible ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <p>{description}</p>
-
             </div>
         </div>
     )

@@ -27,6 +27,7 @@ export type ProjectType = {
     name: string;
     images: string[];
     description: string;
+    href: string
 }
 
 // export type ProjectProps = ProjectType{};
@@ -36,4 +37,5 @@ export type ProjectsType = ProjectType[]
 export interface ProjectImageProps {
   src: string;
   alt: string;
+  href: string;
 }
