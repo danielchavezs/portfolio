@@ -138,6 +138,7 @@ export default function ContactForm() {
                             value={parameters.name}
                             onChange={handleChange}
                         />
+                        <span className={error.name? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
                     </div>
 
                     <div className="mb-4">
@@ -152,6 +153,7 @@ export default function ContactForm() {
                             value={parameters.email}
                             onChange={handleChange}
                         />
+                        <span className={error.email? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
                     </div>
 
                     <div className="flex flex-row justify-between space-x-8">
@@ -167,6 +169,7 @@ export default function ContactForm() {
                               value={parameters.prefix}
                               onChange={handleChange}
                           />
+                          <span className={error.prefix? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
                       </div>
 
                       <div className="flex flex-col">
@@ -181,6 +184,7 @@ export default function ContactForm() {
                               value={parameters.phone}
                               onChange={handleChange}
                           />
+                          <span className={error.phone? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
                       </div>
                     </div>
 
@@ -220,7 +224,7 @@ export default function ContactForm() {
                       <span className={error.contactedBy? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
                     </div>
 
-                    <div className={parameters.contactedBy === "organization" ? "" : "hidden"}>
+                    <div className={parameters.contactedBy === "organization" ? "mb-4" : "hidden"}>
                         <label className="font-medium ">
                             Company´s Name 
                             {/* <span className="text-xs text-gray-700">(optional)</span> */}
@@ -233,6 +237,7 @@ export default function ContactForm() {
                             value={parameters.coName}
                             onChange={handleChange}
                         />
+                        <span className={error.coName? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
                     </div>
 
                     <div className="mb-4">
@@ -246,6 +251,7 @@ export default function ContactForm() {
                             value={parameters.message}
                             onChange={handleChange}
                         />
+                        <span className={error.message? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
                     </div>
 
                   {/* <div className=""> */}
