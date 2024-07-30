@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 // import { Inter } from "next/font/google";
 import "./globals.css";
 import { inter, plusJakartaSans } from "./assets/fonts";
+import { Footer } from "./components/footer";
 
 // const inter = inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={plusJakartaSans.className}>{children}</body>
+      <Footer/>
     </html>
   );
 }

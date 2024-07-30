@@ -3,7 +3,7 @@ import ProjectComponent from "./projectComponent";
 
 export default function ProjectsContainer ({projects}: {projects: ProjectsType}){
     return (
-        <div className="flex lg:flex-row sm:flex-col gap-4 my-6">
+        <div className="flex lg:flex-row md:flex-col sm:flex-col gap-4 my-6">
             {projects.map((proj: ProjectType) => {
                 return (
                     <ProjectComponent
