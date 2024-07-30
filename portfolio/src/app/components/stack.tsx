@@ -1,6 +1,19 @@
+'use client'
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 export function Stack () {
+
+  useEffect(() => {
+    AOS.init({
+      // Configuración opcional
+      duration: 1500,
+    });
+  }, []);
+
     return (
-        <div className= "flex flex-col justify-items-start w-full border-2 border-slate-500 mt-2 mb-10 rounded-md">
+        <div className= "flex flex-col justify-items-start w-full border-2 border-slate-500 mt-12 mb-10 rounded-md"  data-aos="fade">
         <h2 className="flex font-bold m-6 ml-0">My Stack:</h2>
           <div 
           // className="grid-cols-3 gap-4"

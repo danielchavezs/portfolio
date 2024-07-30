@@ -1,10 +1,7 @@
 import ContactForm from "./components/contactForm";
-import ProjectComponent from "./components/projectComponent";
 import { projects } from "./assets/seed";
-import { ProjectType } from "./assets/types";
 import ProjectsContainer from "./components/projectsContainer";
 import { Stack } from "./components/stack";
-import { Footer } from "./components/footer";
 import { AboutMe } from "./components/aboutMe";
 
 export default function Home() {
@@ -20,4 +17,4 @@ export default function Home() {
         {/* <Footer/> */}
     </main>
   );
-}
+};

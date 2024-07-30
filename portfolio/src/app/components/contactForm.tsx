@@ -1,12 +1,14 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect  } from "react";
 import contactFormAction from "../actions/contactFormAction";
 import { Errors, Parameters } from "../assets/types";
 // const { MAIL_ACCESS_KEY } = process.env;
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function ContactForm() {
-    const [parameters, setParameters] = useState({
-      name: "",
+  const [parameters, setParameters] = useState({
+    name: "",
       email: "",
       prefix: "",
       phone: "",
@@ -26,6 +28,14 @@ export default function ContactForm() {
       count: 0
     });
   
+    useEffect(() => {
+        AOS.init({
+          // Configuración opcional
+          duration: 1000,
+        });
+      }, []);
+
+
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const property = event.target.name;
       let value = event.target.value;
@@ -107,7 +117,7 @@ export default function ContactForm() {
     };
     // console.log("PARAMETERS CATCHED: ", parameters);
     return (
-        <div className="bg-slate-700 mt-10 flex flex-col items-center w-fit h-fit p-8 rounded-xl">
+        <div className="bg-slate-700 mt-10 flex flex-col items-center w-fit h-fit p-8 rounded-xl" data-aos="zoom-out">
             {/* <h1 className="flex font-bold text-xl mb-5 ">Contact me:</h1> */}
             {/* <div className="bg-white flex lg:flex-row md:flex-col md:rounded-2xl sm:flex-col max-w-fit shadow-2xl lg:rounded-2xl"> */}
     

@@ -18,8 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={plusJakartaSans.className}>{children}</body>
-      <Footer/>
+      <body className={plusJakartaSans.className}>
+        {children}
+        <Footer/>
+      </body>
     </html>
   );
-}
+};

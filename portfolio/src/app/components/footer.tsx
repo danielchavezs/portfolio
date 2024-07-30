@@ -1,3 +1,4 @@
+// 'use client'
 import { MiniLogos } from "../assets/images";
 
 export function Footer () {
