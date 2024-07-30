@@ -2,9 +2,8 @@ import { ProjectsType, ProjectType } from "../assets/types";
 import ProjectComponent from "./projectComponent";
 
 export default function ProjectsContainer ({projects}: {projects: ProjectsType}){
-    // const { id, name, images, description } = project1; 
     return (
-        <div className="flex flex-row gap-4 my-6">
+        <div className="flex lg:flex-row sm:flex-col gap-4 my-6">
             {projects.map((proj: ProjectType) => {
                 return (
                     <ProjectComponent

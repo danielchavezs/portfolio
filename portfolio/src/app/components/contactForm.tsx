@@ -156,7 +156,7 @@ export default function ContactForm() {
                         <span className={error.email? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
                     </div>
 
-                    <div className="flex flex-row justify-between space-x-8">
+                    <div className="flex md:flex-row sm:flex-col justify-between md:space-x-8 sm:space-x-0 sm:space-y-2 md:space-y-0">
                       <div className="flex flex-col">
                           <label className="font-medium ">
                               Prefix

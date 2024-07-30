@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { ProjectImageProps } from "./types";
-import Link from "next/link";
 
 export function ProjectImage ({src, alt, href}: ProjectImageProps){
     return(
@@ -12,12 +11,14 @@ export function ProjectImage ({src, alt, href}: ProjectImageProps){
                 width={850}
                 height={300}
                 style={{
-                    maxWidth: '850px',
+                    // minWidth: '200px',
+                    // maxWidth: '550px',
                     width: '100%',
+                    maxHeight: "500px",
                     height: 'auto',
                     borderRadius: '8px'
                 }}
             />
         </a>
     )
-}
+};
