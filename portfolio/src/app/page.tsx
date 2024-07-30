@@ -1,7 +1,7 @@
 import ContactForm from "./components/contactForm";
 import { projects } from "./assets/seed";
 import ProjectsContainer from "./components/projectsContainer";
-import { Stack } from "./components/stack";
+import { Stack } from "./components/Intro/stack";
 import { AboutMe } from "./components/aboutMe";
 
 export default function Home() {

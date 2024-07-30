@@ -38,3 +38,17 @@ export function MiniLogos ({src, alt}: {src: string, alt: string}){
         />
     )
 };
+
+export function StackLogos ({src, alt}: {src: string, alt: string}){
+    return(
+        <Image
+            src={src}
+            alt={alt}
+            width={120}
+            height={120}
+            style={{
+                borderRadius: '8px'
+            }}
+        />
+    )
+};

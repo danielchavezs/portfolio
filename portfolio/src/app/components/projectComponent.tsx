@@ -38,12 +38,12 @@ export default function ProjectComponent({ id, name, images, description, href }
 
     return (
         <div 
-            className="flex flex-col p-4 rounded-md space-x-2 border-slate-500 hover:border-2"
+            className="flex flex-col p-4 rounded-md border-slate-500 hover:border-2 w-full"
             onMouseEnter={() => setShowing((prev) => ({ ...prev, description: { ...prev.description, visible: true } }))}
             onMouseLeave={() => setShowing((prev) => ({ ...prev, description: { ...prev.description, visible: false } }))}
         >
             <div className="space-y-3">
-                <h3 className="font-semibold text-xl text-center">{id} - {name}</h3>
+                <h3 className="font-semibold text-xl text-center">{name}</h3>
                 <div className="flex justify-center">
                     <ProjectImage alt={name} src={showing.view.img} href={href}/>
                 </div>
@@ -52,7 +52,7 @@ export default function ProjectComponent({ id, name, images, description, href }
                     </button>
             </div>
 
-            <div className={`mt-4 transition-all duration-500 ease-in-out ${showing.description.visible ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+            <div className={`mt-4 transition-all duration-700 ease-in-out ${showing.description.visible ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <p>{description}</p>
             </div>
         </div>
