@@ -3,14 +3,22 @@ import { projects } from "./assets/seed";
 import ProjectsContainer from "./components/projectsContainer";
 import { Stack } from "./components/Intro/stack";
 import { AboutMe } from "./components/aboutMe";
+import { Intro } from "./components/Intro/intro";
+import { IntroBackground } from "./assets/images";
+// import { url } from "inspector";
+import { introBg } from "./components/Intro/logosSrc";
 
 export default function Home() {
 
   return (
-    <main className="flex min-h-screen flex-col items-center md:p-10 sm:p-4">
-        <h1 className="flex text-3xl font-extrabold mb-1"> DANIEL CHAVEZ </h1>
-        <p>Bilingual Engineer & Full Stack Developer based on <code>JavaScript</code> technologies.</p>
+    <main className="flex min-h-screen flex-col items-center md:p-10 sm:p-4 ">
+      <div 
+      className="flex flex-col w-full items-center" 
+      // bg-custom-background bg-cover bg-center bg-opacity-70
+      >
+        <Intro/>
         <Stack/>
+      </div>
         <ProjectsContainer projects={projects} />
         <AboutMe/>
         <ContactForm/>

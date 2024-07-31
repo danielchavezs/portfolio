@@ -17,10 +17,12 @@ const config: Config = {
         // '2xl': '1536px',
       },
       colors:{
-        darkBase: 'hsl(202, 60%, 13%)',
+        darkBase: 'hsl(202, 60%, 10%)',
       },
       backgroundImage: {
-        'gradient-to-dark': 'linear-gradient(to bottom, hsl(202, 60%, 13%), hsl(202, 60%, 16%))',
+        'custom-background': "url('https://images.pexels.com/photos/957061/milky-way-starry-sky-night-sky-star-957061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+        'gradient-overlay': "linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1))",
+        'gradient-to-dark': 'linear-gradient(to bottom, hsl(202, 60%, 10%), hsl(202, 60%, 12%))',
       },
       // backgroundImage: {
       //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

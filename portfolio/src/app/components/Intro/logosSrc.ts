@@ -41,7 +41,7 @@ export const logosSrc = [
     },
     {
         tech: 'Next.js',
-        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-line-wordmark.svg',
+        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
     },
     {
         tech: 'Vite',
@@ -56,8 +56,14 @@ export const logosSrc = [
         src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-plain-wordmark.svg',
     },
     {
-        tech: 'Jest',
-        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg',
+        tech: 'Supabase',
+        src: '/supabase.png',
     },
+    // {
+    //     tech: 'Jest',
+    //     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg',
+    // },
     
 ];
+
+export const introBg = "https://images.pexels.com/photos/957061/milky-way-starry-sky-night-sky-star-957061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";

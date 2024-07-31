@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ProjectImageProps } from "./types";
+import { introBg } from "../components/Intro/logosSrc";
 
 export function ProjectImage ({src, alt, href}: ProjectImageProps){
     return(
@@ -33,7 +34,7 @@ export function MiniLogos ({src, alt}: {src: string, alt: string}){
             width={20}
             height={20}
             style={{
-                borderRadius: '4px'
+                borderRadius: '4px',
             }}
         />
     )
@@ -42,12 +43,32 @@ export function MiniLogos ({src, alt}: {src: string, alt: string}){
 export function StackLogos ({src, alt}: {src: string, alt: string}){
     return(
         <Image
+            // className="max-wfull h-auto"
             src={src}
             alt={alt}
             width={120}
             height={120}
             style={{
-                borderRadius: '8px'
+                borderRadius: '12px',
+                width: '100%',
+                height: 'auto',
+            }}
+        />
+    )
+};
+
+export function IntroBackground () {
+    return(
+        <Image
+            // className="max-wfull h-auto"
+            src={introBg}
+            alt="Deep space"
+            width={673}
+            height={373}
+            style={{
+                // borderRadius: '12px',
+                width: '100%',
+                height: 'auto',
             }}
         />
     )

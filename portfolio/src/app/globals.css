@@ -4,8 +4,8 @@
 
 :root {
   --foreground-rgb: 255, 255, 255; /* Text color */
-  --background-start-rgb: 17, 23, 40; /* Start color for gradient */
-  --background-end-rgb: 31, 40, 64; /* End color for gradient */
+  --background-start-rgb: 13, 20, 35; /* Start color for gradient */
+  --background-end-rgb: 25, 32, 50; /* End color for gradient */
 }
 
 body {
