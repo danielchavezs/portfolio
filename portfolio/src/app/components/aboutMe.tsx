@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { MiniLogos, StackLogos } from "../assets/images";
 
 export function AboutMe (){
     useEffect(() => {
@@ -12,8 +13,55 @@ export function AboutMe (){
       }, [])
     
     return (
-        <div className="border-2 my-24 w-full text-center h-20" data-aos="fade-up">
-            <h2 className="my-6">ABOUT ME COMPONENT</h2>
+        <div className="grid grid-flow-row my-24 w-full" data-aos="fade-up">
+            <div className="flex flex-col p-4 space-y-2">
+              <span className="font-semibold text-lg mb-3">A few thing aboute me:</span>
+              <ul> 📍 Colombia, South America</ul>
+              <ul> 👨🏼‍🎓 Full Stack Developer & Petroleum Engineer</ul>
+              <ul> 💻 Backend, Database and Frontend</ul>
+              <ul className="max-w-fit">  Over 3 years of experience in Oil & Gas Industry:</ul>
+              <ul> Personel qualification, processes quality and project management experience.</ul>
+            </div>
+
+            <div className="grid mt-8 lg:grid-flow-col sm:grid-flow-row">
+              <div className="flex flex-col p-4 lg:space-y-5 sm:space-y-2">
+                <p className="flex font-semibold lg:mb-2">Whant to get to know me better?</p>
+              
+                  <a href="https://www.linkedin.com/in/daniel-chavez-engineer-developer/" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2">
+                      <MiniLogos src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg' alt='LinkedIn Logo'/>
+                      <strong>LinkedIn</strong>
+                  </a>
+                  <a href="https://github.com/danielchavezs" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2">
+                      <MiniLogos src='/github.svg' alt='GitHub Logo'/>
+                      <strong>Git Hub</strong>
+                  </a>
+                  <a href="https://wa.me/573168242457" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2">
+                      <MiniLogos src='/whatsapp.svg' alt='Whatsapp Logo'/>
+                      <strong>WhatsApp</strong>
+                  </a>
+              </div>
+
+              <div className="flex flex-col w-max p-4">
+                <p className="flex font-semibold mb-6">My resume</p>
+
+                <div className="flex flex-col space-y-4">
+                    <a download="ENG_Daniel_Chavez_CV" href="/CV/ENG_Daniel_Chavez_CV.pdf" className="flex flex-row items-center">
+                      <div className="flex max-w-10">
+                        <StackLogos src="/pdf_logo.png" alt="PDF Logo"/>
+                      </div>
+                      <span className="ml-2 text-sm">English Version</span>
+                    </a>
+
+                    <a download="SPA_Daniel_Chavez_CV" href="/CV/SPA_Daniel_Chavez_CV.pdf" className="flex flex-row items-center">
+                      <div className="flex max-w-10">
+                        <StackLogos src="/pdf_logo.png" alt="PDF Logo"/>
+                      </div>
+                      <span className="ml-2 text-sm">Spanish Version</span>
+                    </a>
+                </div>
+              </div>
+
+            </div>
         </div>
     )
 };

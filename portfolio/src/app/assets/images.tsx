@@ -31,8 +31,8 @@ export function MiniLogos ({src, alt}: {src: string, alt: string}){
         <Image
             src={src}
             alt={alt}
-            width={20}
-            height={20}
+            width={22}
+            height={22}
             style={{
                 borderRadius: '4px',
             }}
@@ -49,7 +49,7 @@ export function StackLogos ({src, alt}: {src: string, alt: string}){
             width={120}
             height={120}
             style={{
-                borderRadius: '12px',
+                borderRadius: '10px',
                 width: '100%',
                 height: 'auto',
             }}

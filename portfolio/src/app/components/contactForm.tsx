@@ -117,7 +117,7 @@ export default function ContactForm() {
     };
     // console.log("PARAMETERS CATCHED: ", parameters);
     return (
-        <div className="bg-slate-700 mt-10 flex flex-col items-center w-fit h-fit p-8 rounded-xl" data-aos="zoom-out">
+        <div className="bg-slate-700 mt-10 flex flex-col items-center w-fit h-fit lg:p-8 md:p-6 sm:p-4 rounded-xl" data-aos="zoom-out">
             {/* <h1 className="flex font-bold text-xl mb-5 ">Contact me:</h1> */}
             {/* <div className="bg-white flex lg:flex-row md:flex-col md:rounded-2xl sm:flex-col max-w-fit shadow-2xl lg:rounded-2xl"> */}
     
