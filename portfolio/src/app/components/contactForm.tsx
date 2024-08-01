@@ -117,7 +117,7 @@ export default function ContactForm() {
     };
     // console.log("PARAMETERS CATCHED: ", parameters);
     return (
-        <div className="bg-slate-700 mt-10 flex flex-col items-center w-fit h-fit lg:p-8 md:p-6 sm:p-4 rounded-xl" data-aos="zoom-out">
+        <div className="bg-gradient-to-dark flex flex-col items-center w-fit h-fit lg:p-8 md:p-6 sm:p-4 rounded-xl" data-aos="zoom-out">
             {/* <h1 className="flex font-bold text-xl mb-5 ">Contact me:</h1> */}
             {/* <div className="bg-white flex lg:flex-row md:flex-col md:rounded-2xl sm:flex-col max-w-fit shadow-2xl lg:rounded-2xl"> */}
     
@@ -127,7 +127,7 @@ export default function ContactForm() {
                 <div className="flex justify-between mb-8">
                   <h2 className="text-xl font-extrabold"> Contact Me </h2>
                   <button
-                    className="text-gray-200 font-semibold underline text-xs"
+                    className="text-gray-200 font-semibold underline text-xs rounded-md p-2 hover:bg-slate-700 hover:no-underline"
                     type="button"
                     onClick={resetAll}
                   >
@@ -166,7 +166,7 @@ export default function ContactForm() {
                         <span className={error.email? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
                     </div>
 
-                    <div className="flex md:flex-row sm:flex-col justify-between md:space-x-8 sm:space-x-0 sm:space-y-2 md:space-y-0">
+                    <div className="flex md:flex-row sm:flex-col justify-between md:space-x-8 sm:space-x-0 sm:space-y-3 md:space-y-0">
                       <div className="flex flex-col">
                           <label className="font-medium ">
                               Prefix
@@ -267,7 +267,7 @@ export default function ContactForm() {
                   {/* <div className=""> */}
                     <button
                       type="submit"
-                      className="bg-slate-500 rounded-md p-2 hover:bg-slate-400"
+                      className="bg-slate-600 rounded-md p-2 hover:bg-slate-500"
                     >
                       {/* <CalculatorIcon/> puede ser un logo de mail */}
                       {" "}

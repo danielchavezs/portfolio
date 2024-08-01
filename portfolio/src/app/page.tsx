@@ -11,14 +11,14 @@ import { introBg } from "./components/Intro/logosSrc";
 export default function Home() {
 
   return (
-    <main className="flex min-h-screen flex-col items-center md:p-10 sm:p-4 ">
-      <div 
+    <main className="flex min-h-screen flex-col items-center lg:space-y-16 sm:space-y-10 md:p-10 sm:p-4 sm:pb-8 ">
+      {/* <div 
       className="flex flex-col w-full items-center" 
       // bg-custom-background bg-cover bg-center bg-opacity-70
-      >
+      > */}
         <Intro/>
         <Stack/>
-      </div>
+      {/* </div> */}
         <ProjectsContainer projects={projects} />
         <AboutMe/>
         <ContactForm/>

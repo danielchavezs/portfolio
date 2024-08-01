@@ -12,7 +12,7 @@ export default function ProjectComponent({ id, name, images, description, href }
         },
         view: {
             img: images[0],
-            buttonName: "Mobile View"
+            buttonName: "View Mobile"
         }
     });
 
@@ -22,7 +22,7 @@ export default function ProjectComponent({ id, name, images, description, href }
                 ...showing,
                 view: {
                     img: images[1],
-                    buttonName: "Desktop View",
+                    buttonName: "View Desktop ",
                 }, 
             });
         } else {
@@ -30,7 +30,7 @@ export default function ProjectComponent({ id, name, images, description, href }
                 ...showing,
                 view: {
                     img: images[0],
-                    buttonName: "Mobile View",
+                    buttonName: "View Mobile",
                 }, 
             });
         }
@@ -47,7 +47,7 @@ export default function ProjectComponent({ id, name, images, description, href }
                 <div className="flex justify-center">
                     <ProjectImage alt={name} src={showing.view.img} href={href}/>
                 </div>
-                    <button onClick={changeImage} className="text-xs bg-slate-500 rounded-md p-1 hover:bg-slate-400">
+                    <button onClick={changeImage} className="text-xs bg-slate-600 rounded-md p-1 hover:bg-slate-500">
                         {showing.view.buttonName}
                     </button>
             </div>
