@@ -13,7 +13,7 @@ export const logosSrc = [
     },
     {
         tech: 'Express.js',
-        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg',
+        src: '/express.svg',
     },
     {
         tech: 'PostgreSQL',

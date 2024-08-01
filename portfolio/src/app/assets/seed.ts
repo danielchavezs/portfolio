@@ -11,7 +11,7 @@ export const projects: ProjectsType = [
     {
         id: 2,
         name: "Invoice Dashboard",
-        images: ["/invoice_dashboard_desktop.PNG", "/invoice_dashboard_mobile.png"],
+        images: ["/invoice_dashboard_desktop.png", "/invoice_dashboard_mobile.png"],
         description: "Invoices dashboard developed on the official Next.js course, featuring server components, streaming, loading managing rendering and more.",
         href: "https://nextjs-dashboard-htg7.vercel.app/dashboard"
     },
