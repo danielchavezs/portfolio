@@ -15,7 +15,7 @@ export function AboutMe (){
     return (
         <div className="grid grid-flow-row w-full" data-aos="fade-up">
             <div className="flex flex-col p-4 space-y-2">
-              <span className="font-semibold text-lg mb-3">A few thing aboute me:</span>
+              <span className="font-semibold text-lg mb-3">A few things about me:</span>
               <ul> 📍 Colombia, South America</ul>
               <ul> 👨🏼‍🎓 Full Stack Developer & Petroleum Engineer</ul>
               <ul> 💻 Database, Backend and Frontend</ul>
@@ -33,7 +33,7 @@ export function AboutMe (){
                   </a>
                   <a href="https://github.com/danielchavezs" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2 max-w-fit hover:p-1 rounded-md hover:bg-slate-800">
                       <MiniLogos src='/github.svg' alt='GitHub Logo'/>
-                      <strong>Git Hub</strong>
+                      <strong>GitHub</strong>
                   </a>
                   <a href="https://wa.me/573168242457" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2 max-w-fit hover:p-1 rounded-md hover:bg-slate-800">
                       <MiniLogos src='/whatsapp.svg' alt='Whatsapp Logo'/>
