@@ -38,7 +38,7 @@ export default function ProjectComponent({ id, name, images, description, href }
 
     return (
         <div 
-            className="flex flex-col p-4 rounded-md border-slate-500 hover:border-2 w-full"
+            className="flex flex-col p-4 rounded-md border-slate-800 w-full hover:border-0 hover:bg-gradient-to-dark"
             onMouseEnter={() => setShowing((prev) => ({ ...prev, description: { ...prev.description, visible: true } }))}
             onMouseLeave={() => setShowing((prev) => ({ ...prev, description: { ...prev.description, visible: false } }))}
         >
