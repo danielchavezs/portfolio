@@ -24,7 +24,7 @@ export function AboutMe (){
             </div>
 
             <div className="grid mt-4 lg:grid-flow-col sm:grid-flow-row">
-              <div className="flex flex-col p-4 lg:space-y-5 sm:space-y-2">
+              <div className="flex flex-col p-4 lg:space-y-3 sm:space-y-2">
                 <p className="flex font-semibold lg:mb-2">Whant to get to know me better?</p>
               
                   <a href="https://www.linkedin.com/in/daniel-chavez-engineer-developer/" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2 max-w-fit hover:p-1 rounded-md hover:bg-slate-800">
@@ -39,12 +39,16 @@ export function AboutMe (){
                       <MiniLogos src='/whatsapp.svg' alt='Whatsapp Logo'/>
                       <strong>WhatsApp</strong>
                   </a>
+                  <div className="flex flex-row space-x-2 max-w-fit rounded-md">
+                      <MiniLogos src='/mail.png' alt='Mail Logo'/>
+                      <strong>danielechs@hotmail.com</strong>  
+                  </div>
               </div>
 
               <div className="flex flex-col w-max p-4">
                 <p className="flex font-semibold mb-6">My resume</p>
 
-                <div className="flex flex-col space-y-4">
+                <div className="flex flex-col space-y-6">
                     <a download="ENG_Daniel_Chavez_CV" href="/CV/ENG_Daniel_Chavez_CV.pdf" className="flex flex-row items-center rounded-md max-w-fit hover:p-1 hover:pl-0 hover:bg-slate-800">
                       <div className="flex max-w-10">
                         <StackLogos src="/pdf_logo.png" alt="PDF Logo"/>
