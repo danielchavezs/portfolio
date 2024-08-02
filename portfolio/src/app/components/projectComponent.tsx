@@ -47,7 +47,7 @@ export default function ProjectComponent({ id, name, images, description, href }
                 <div className="flex justify-center">
                     <ProjectImage alt={name} src={showing.view.img} href={href}/>
                 </div>
-                    <button onClick={changeImage} className="text-xs bg-slate-600 rounded-md p-1 hover:bg-slate-500">
+                    <button onClick={changeImage} className="text-xs font-semibold bg-slate-600 rounded-md p-1 px-2 hover:bg-slate-500">
                         {showing.view.buttonName}
                     </button>
             </div>
