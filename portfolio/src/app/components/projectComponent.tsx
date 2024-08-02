@@ -52,7 +52,7 @@ export default function ProjectComponent({ id, name, images, description, href }
                     </button>
             </div>
 
-            <div className={`mt-4 transition-all duration-700 ease-in-out ${showing.description.visible ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+            <div className={`mt-4 transition-all duration-700 ease-in-out ${showing.description.visible ? 'max-h-fit opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <p>{description}</p>
             </div>
         </div>
