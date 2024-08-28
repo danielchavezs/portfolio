@@ -19,7 +19,7 @@ export function AboutMe (){
               <ul> 📍 Colombia, South America</ul>
               <ul> 👨🏼‍🎓 Full Stack Developer & Petroleum Engineer</ul>
               <ul> 💻 Database, Backend and Frontend</ul>
-              <ul className="max-w-fit">  Over 3 years of experience in Oil & Gas Industry:</ul>
+              <ul className="max-w-fit">  4 years of experience in Oil & Gas Industry:</ul>
               <ul> Personel qualification, processes quality and project management experience.</ul>
             </div>
 
@@ -39,24 +39,24 @@ export function AboutMe (){
                       <MiniLogos src='/whatsapp.svg' alt='Whatsapp Logo'/>
                       <strong>WhatsApp</strong>
                   </a>
-                  <div className="flex flex-row space-x-2 max-w-fit rounded-md">
+                  <a href="mailto:danielechs@hotmail.com" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2 max-w-fit rounded-md">
                       <MiniLogos src='/mail.png' alt='Mail Logo'/>
                       <strong>danielechs@hotmail.com</strong>  
-                  </div>
+                  </a>
               </div>
 
               <div className="flex flex-col w-max p-4">
                 <p className="flex font-semibold mb-6">My resume</p>
 
                 <div className="flex flex-col space-y-6">
-                    <a download="ENG_Daniel_Chavez_CV" href="/CV/ENG_Daniel_Chavez_CV.pdf" className="flex flex-row items-center rounded-md max-w-fit hover:p-1 hover:pl-0 hover:bg-slate-800">
+                    <a download="Daniel_Chavez_CV_ENG" href="/CV/Daniel_Chavez_CV_ENG.pdf" className="flex flex-row items-center rounded-md max-w-fit hover:p-1 hover:pl-0 hover:bg-slate-800">
                       <div className="flex max-w-10">
                         <StackLogos src="/pdf_logo.png" alt="PDF Logo"/>
                       </div>
                       <span className="ml-2 text-sm">English Version</span>
                     </a>
 
-                    <a download="SPA_Daniel_Chavez_CV" href="/CV/SPA_Daniel_Chavez_CV.pdf" className="flex flex-row items-center max-w-fit hover:p-1 hover:pl-0 rounded-md hover:bg-slate-800">
+                    <a download="Daniel_Chavez_CV_SPA" href="/CV/Daniel_Chavez_CV_SPA.pdf" className="flex flex-row items-center max-w-fit hover:p-1 hover:pl-0 rounded-md hover:bg-slate-800">
                       <div className="flex max-w-10">
                         <StackLogos src="/pdf_logo.png" alt="PDF Logo"/>
                       </div>
