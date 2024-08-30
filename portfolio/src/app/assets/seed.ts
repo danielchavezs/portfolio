@@ -22,4 +22,11 @@ export const projects: ProjectsType = [
         description: "A simple mortgage calculator app developed in Next.js with features like conditional rendering to display results, error handling for incomplete fields, and a responsive design for desktop, tablet, and mobile devices. Key technologies include Next.js and Tailwind CSS.",
         href: "https://mortage-calculator-swart.vercel.app/"
     },
+    {
+        id: 4,
+        name: "GreenCall Website",
+        images: ["/greencall_desktop.png", "/greencall_mobile.png"],
+        description: "Corporate website for cannabis growing company in Colombia, featuring an automatic slider, informative sections, and a contact form. Built with Next.js and Tailwind CSS for styles and responsive design.",
+        href: "https://greencall.vercel.app/"
+    },
 ];

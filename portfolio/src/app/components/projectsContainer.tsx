@@ -15,7 +15,7 @@ export default function ProjectsContainer ({projects}: {projects: ProjectsType})
       }, []);
 
     return (
-        <div className="flex lg:flex-row sm:flex-col" data-aos="fade-up">
+        <div className="grid lg:grid-cols-2 sm:grid-cols-1" data-aos="fade-up">
             {projects.map((proj: ProjectType) => {
                 return (
                     <ProjectComponent
