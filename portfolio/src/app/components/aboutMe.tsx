@@ -39,7 +39,7 @@ export function AboutMe (){
                       <MiniLogos src='/whatsapp.svg' alt='Whatsapp Logo'/>
                       <strong>WhatsApp</strong>
                   </a>
-                  <a href="mailto:danielechs@hotmail.com" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2 max-w-fit rounded-md">
+                  <a href="mailto:danielechs@hotmail.com" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2 max-w-fit hover:p-1 rounded-md hover:bg-slate-800">
                       <MiniLogos src='/mail.png' alt='Mail Logo'/>
                       <strong>danielechs@hotmail.com</strong>  
                   </a>
