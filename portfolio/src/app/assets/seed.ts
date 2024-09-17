@@ -24,7 +24,7 @@ export const projects: ProjectsType = [
     },
     {
         id: 4,
-        name: "GreenCall Website",
+        name: "GreenCall",
         images: ["/greencall_desktop.JPG", "/greencall_mobile.png"],
         description: "Corporate website for cannabis growing company in Colombia, featuring an automatic slider, informative sections, and a contact form. Built with Next.js and Tailwind CSS for styles and responsive design.",
         href: "https://greencall.vercel.app/"
