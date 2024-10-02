@@ -127,7 +127,7 @@ export default function ContactForm() {
                 <div className="flex justify-between mb-8">
                   <h2 className="text-xl font-extrabold"> Contact Me </h2>
                   <button
-                    className="text-gray-200 font-semibold underline text-xs rounded-md p-2 hover:bg-slate-700 hover:no-underline"
+                    className="text-gray-200 font-semibold underline text-xs rounded-md p-2 transition-all transform hover:scale-105 hover:bg-slate-600 hover:no-underline"
                     type="button"
                     onClick={resetAll}
                   >
@@ -267,7 +267,7 @@ export default function ContactForm() {
                   {/* <div className=""> */}
                     <button
                       type="submit"
-                      className="bg-slate-600 rounded-md p-2 hover:bg-slate-500"
+                      className="bg-slate-600 rounded-md p-2 transition-all transform hover:bg-slate-500 hover:scale-105"
                     >
                       {/* <CalculatorIcon/> puede ser un logo de mail */}
                       {" "}
