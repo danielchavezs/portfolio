@@ -86,13 +86,13 @@ export function AboutMe() {
             <a
               download="Daniel_Chavez_CV_ENG"
               href="/CV/Daniel_Chavez_CV_ENG.pdf"
-              className="flex flex-row items-center rounded-md max-w-fit hover:p-1 hover:pl-0 transition-all transform hover:bg-slate-800"
+              className="flex flex-row items-center rounded-md max-w-fit hover:p-1 hover:pl-0 transition-all transform hover:scale-110 hover:shadow-xl hover:shadow-slate-900 hover:bg-slate-800"
             >
               <div className="flex max-w-10">
                 <StackLogos
                   src="/pdf_logo.png"
                   alt="PDF Logo"
-                  title="English Version CV"
+                  // title="English Version CV"
                 />
               </div>
               <span className="ml-2 text-sm">English Version</span>
@@ -101,13 +101,13 @@ export function AboutMe() {
             <a
               download="Daniel_Chavez_CV_SPA"
               href="/CV/Daniel_Chavez_CV_SPA.pdf"
-              className="flex flex-row items-center max-w-fit hover:p-1 hover:pl-0 rounded-md transition-all transform hover:bg-slate-800"
+              className="flex flex-row items-center max-w-fit hover:p-1 hover:pl-0 rounded-md transition-all transform hover:scale-110 hover:shadow-xl hover:shadow-slate-900 hover:bg-slate-800"
             >
               <div className="flex max-w-10">
                 <StackLogos
                   src="/pdf_logo.png"
                   alt="PDF Logo"
-                  title="Spanish Version CV"
+                  // title="Spanish Version CV"
                 />
               </div>
               <span className="ml-2 text-sm">Spanish Version</span>

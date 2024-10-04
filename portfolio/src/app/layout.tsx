@@ -8,7 +8,11 @@ import { Footer } from "./components/footer";
 
 export const metadata: Metadata = {
   title: "Daniel Chavez Portfolio",
-  description: "Information and professional portfolio from Web Developer & Engineer Daniel Chavez.",
+  description:
+    "Information and professional portfolio from Web Developer & Engineer Daniel Chavez.",
+  icons: {
+    icon: "/code-32.png",
+  },
 };
 
 export default function RootLayout({
@@ -24,4 +28,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-};
+}

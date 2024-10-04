@@ -26,8 +26,11 @@ export function Stack() {
               <StackLogos
                 src={tech.src}
                 alt={`${tech.tech} Logo.`}
-                title={tech.tech}
+                // title={tech.tech}
               />
+              <span className="hidden text-sm text-slate-400 hover:block">
+                {tech.tech}
+              </span>
             </div>
           );
         })}

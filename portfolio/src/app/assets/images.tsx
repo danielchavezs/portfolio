@@ -43,16 +43,16 @@ export function MiniLogos({ src, alt }: { src: string; alt: string }) {
 export function StackLogos({
   src,
   alt,
-  title,
-}: {
+}: //   title,
+{
   src: string;
   alt: string;
-  title: string;
+  //   title: string;
 }) {
   return (
     <img
       // className="max-wfull h-auto"
-      title={title}
+      //   title={title}
       src={src}
       alt={alt}
       width={120}
