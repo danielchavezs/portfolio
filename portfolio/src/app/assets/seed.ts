@@ -32,14 +32,14 @@ export const projects: ProjectsType = [
     {
         id: 5,
         name: "Promotional Sweepstake",
-        images: ["/projects/sweepstake_desktop.png", "/projects/sweepstake_mobile.png"],
+        images: ["/projects/sweepstake_desktop.PNG", "/projects/sweepstake_mobile.png"],
         description: "Developed for a Colombian marketing agency, this Next.js app enables users to participate in a promotional sweepstake. It features real-time form validation, responsive design with Tailwind, and conditional rendering. The app also fetches region and city data from an API to populate dependent dropdowns seamlessly.",
         href: "https://sorteo-one.vercel.app/"
     },
     {
         id: 6,
         name: "Owen Partners",
-        images: ["/projects/owen_desktop1.png", "/projects/owen_mobile6.png"],
+        images: ["/projects/owen_desktop1.PNG", "/projects/owen_mobile6.png"],
         description: "Collaborated with an Australian financial advisory firm to enhance their website's UI components and optimize its responsive design. Built on WordPress, the project also included integrating Calendly to streamline client meeting scheduling.",
         href: "https://owenpartners.com.au/"
     },
