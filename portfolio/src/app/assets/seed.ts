@@ -33,7 +33,7 @@ export const projects: ProjectsType = [
         id: 5,
         name: "Promotional Sweepstake",
         images: ["/projects/sweepstake_desktop.png", "/projects/sweepstake_mobile.png"],
-        description: "Created for a Colombian marketing agency, this Next.js app enables users to register and participate in a promotional sweepstake. It features real-time form validation, responsive design with Tailwind CSS, and conditional rendering for dynamic user experiences. The app also fetches region and city data from an API to populate dependent dropdowns seamlessly.",
+        description: "Developed for a Colombian marketing agency, this Next.js app enables users to participate in a promotional sweepstake. It features real-time form validation, responsive design with Tailwind, and conditional rendering. The app also fetches region and city data from an API to populate dependent dropdowns seamlessly.",
         href: "https://sorteo-one.vercel.app/"
     },
     {
