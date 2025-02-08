@@ -2,6 +2,13 @@ import { ProjectsType } from "./types";
 
 export const projects: ProjectsType = [
     {
+        id: 8,
+        name: "Verify Influencers",
+        images: ["/projects/verify_influencer_desktop.PNG", "/projects/verify_influencer_mobile.png"],
+        description: "Verify Influencers is a full-stack web app built with Next.js 15, Tailwind CSS, and MongoDB, designed to analyze and rank health influencers based on AI-powered credibility assessments. It integrates the Perplexity API to extract and structure claims, leveraging SSR for SEO and performance, while implementing CSR for interactivity, with React Suspense and Server Actions optimizing data handling. The backend, powered by Mongoose, enables advanced filtering and sorting. Tailwind CSS ensures a responsive UI, while streaming enhances performance for a seamless user experience. Combining AI, data processing, and modern web techniques, this app showcases strong full-stack development skills.",
+        href: 'https://verify-influencers-alpha.vercel.app/'
+    },
+    {
         id: 7,
         name: "Task Manager",
         images: ["/projects/task_manager_desktop.PNG", "/projects/task_manager_mobile.png"],
