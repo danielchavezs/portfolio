@@ -5,7 +5,7 @@ import { logosSrc } from "./logosSrc";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export function Stack() {
+export function StackGrid() {
   useEffect(() => {
     AOS.init({
       // Configuración opcional

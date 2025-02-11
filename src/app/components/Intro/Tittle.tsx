@@ -4,7 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-export function Intro () {
+export function Tittle () {
     useEffect(() => {
       AOS.init({
         // Configuración opcional
@@ -14,12 +14,12 @@ export function Intro () {
     
     return(
         <div 
-          className='flex flex-col lg:items-center sm:items-start border-0 rounded-md lg:space-y-0 sm:space-y-2' 
-          data-aos="zoom-out"
+          className='flex flex-col lg:text-start sm:text-center lg:items-start sm:items-center border-0 rounded-md lg:space-y-0 sm:space-y-2' 
+          data-aos="fade-left"
         >
             <h1
               // className="flex justify-center tracking-[.045em] sm:justify-start lg:text-8xl md:text-7xl sm:text-6xl font-extrabold mb-0 hover:text-slate-300 transition-colors duration-300" 
-              className="flex lg:text-8xl md:text-7xl sm:text-6xl font-extrabold"
+              className="flex lg:text-7xl md:text-6xl sm:text-5xl font-extrabold"
                 style={{ 
                 color: 'transparent', 
                 backgroundImage: 'linear-gradient(100deg, #fcfcfc, #7e92cf)',

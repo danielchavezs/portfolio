@@ -55,10 +55,10 @@ export const logosSrc = [
     tech: "Next.js",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
   },
-//   {
-//     tech: "Vite",
-//     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
-//   },
+  {
+    tech: "Vite",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
+  },
   {
     tech: "Redux",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
@@ -75,10 +75,10 @@ export const logosSrc = [
     tech: "Supabase",
     src: "/supabase.png",
   },
-//   {
-//       tech: 'Jest',
-//       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg',
-//   },
+  {
+      tech: 'Jest',
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg',
+  },
 ];
 
 export const introBg =

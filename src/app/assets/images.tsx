@@ -81,4 +81,21 @@ export function IntroBackground() {
       }}
     />
   );
-}
+};
+
+
+export function ProfilePicture () {
+
+  // Needs to be wrapped in a container to define its final size. Thinked to be 1:1.
+  return (
+    <div className="flex items-center rounded-full overflow-hidden w-full h-full ">
+      <Image
+        src="/CV/LinkedIn_Profile.jpeg"
+        alt="Daniel Chávez"
+        width={300}
+        height={300}
+        // objectFit="cover" // Scale the image to cover the container
+      />
+    </div>
+  );
+};
