@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
-import { ProjectImage } from "../assets/images";
-import { ProjectType } from "../assets/types";
+import { ProjectImage } from "../../assets/images";
+import { ProjectType } from "../../assets/types";
 
 export default function ProjectComponent({ id, name, images, description, href }: ProjectType) {
 

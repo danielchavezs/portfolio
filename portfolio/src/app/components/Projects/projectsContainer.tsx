@@ -1,5 +1,5 @@
 'use client'
-import { ProjectsType, ProjectType } from "../assets/types";
+import { ProjectsType, ProjectType } from "../../assets/types";
 import { useEffect, useState } from "react";
 import ProjectComponent from "./projectComponent";
 import 'aos/dist/aos.css';

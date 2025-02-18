@@ -1,4 +1,4 @@
-import ProjectsContainer from "./components/projectsContainer";
+import ProjectsContainer from "./components/Projects/projectsContainer";
 import ContactForm from "./components/contactForm";
 import { projects } from "./assets/seed";
 import { AboutMe } from "./components/aboutMe";
@@ -14,7 +14,7 @@ export default function Home() {
         <InfiniteSlider/>
         <ProjectsContainer projects={projects} />
         <AboutMe/>
-        <ContactForm/>
+        {/* <ContactForm/> */}
         {/* <Footer/> */}
     </main>
   );
