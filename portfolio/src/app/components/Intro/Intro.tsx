@@ -16,7 +16,7 @@ export default function Intro () {
                             Bilingual (ENG - SPA) Full Stack Developer with a background in Petroleum Engineering. Proficient in backend and frontend development, including responsive design and techniques such as SSR with CSR and streaming. Experienced in JavaScript, TypeScript, Node.js, HTML5, CSS, React, Next, Redux, PostgreSQL, and MongoDB, with strong agile fundamentals.
                         </p>
                         <p>
-                            Strong abilities in problem-solving, adaptability, communication, proactivity, teamwork, and continuous learning. With 4 years in Oil & Gas, I have gained project management and quality process experience; currently pursuing a project management diploma and an intensive JS course at EPAM Campus. <strong>English Level: C2.</strong> 
+                            Strong abilities in problem-solving, adaptability, communication, proactivity, teamwork, and continuous learning. With 4 years in Oil & Gas, I have gained project management and quality process experience; currently pursuing a project management diploma at Politécnico de Colombia and an intensive JS course at EPAM Campus. <strong>English Level: C2.</strong> 
                         </p>
                     </div>
                 </div>

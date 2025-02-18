@@ -37,7 +37,7 @@ export function Tittle () {
                 letterSpacing: '2px',
                 textShadow: '2px 2px 4px rgba(255, 255, 255, 0.185)',
                 }}  
-              >Bilingual Engineer & Full Stack Developer based on JavaScript technologies.</h3>
+              >Bilingual Engineer & Full Stack Developer based on Web technologies.</h3>
         </div>
     );
 };
