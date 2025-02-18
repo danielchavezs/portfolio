@@ -30,6 +30,7 @@ export default function ProjectsContainer ({projects}: {projects: ProjectsType})
                             images={proj.images}
                             description={proj.description}
                             href={proj.href}
+                            date={proj.date}
                         />
                     );
                 })}

@@ -27,7 +27,8 @@ export type ProjectType = {
     name: string;
     images: string[];
     description: string;
-    href: string
+    href: string;
+    date: string;
 }
 
 // export type ProjectProps = ProjectType{};
