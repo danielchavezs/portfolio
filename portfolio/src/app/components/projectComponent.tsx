@@ -7,7 +7,7 @@ export default function ProjectComponent({ id, name, images, description, href }
 
     const [showing, setShowing] = useState({
         description: {
-            visible: false,
+            visible: true,
             buttonName: "Show Description"
         },
         view: {
@@ -37,23 +37,19 @@ export default function ProjectComponent({ id, name, images, description, href }
     };
 
     return (
-        <div 
-            className="flex flex-col p-4 rounded-md border-slate-800 w-full hover:border-0 hover:bg-gradient-to-dark"
-            onMouseEnter={() => setShowing((prev) => ({ ...prev, description: { ...prev.description, visible: true } }))}
-            onMouseLeave={() => setShowing((prev) => ({ ...prev, description: { ...prev.description, visible: false } }))}
-        >
-            <div className="space-y-3">
-                <h3 className="font-semibold text-xl text-center">{name}</h3>
+        <div className="flex md:flex-row sm:flex-col gap-4 p-4 rounded-md border-slate-800 w-full hover:border-0 hover:bg-gradient-to-dark">
+            <div className="space-y-3 lg:w-1/3 md:w-2/5 sm:w-full">
+                <h3 className="font-semibold md:text-lg sm:text-base text-center">{name}</h3>
                 <div className="flex justify-center">
                     <ProjectImage alt={name} src={showing.view.img} href={href}/>
                 </div>
-                    <button onClick={changeImage} className="text-xs font-semibold bg-slate-600 rounded-md p-1 px-2 hover:bg-slate-500">
-                        {showing.view.buttonName}
-                    </button>
             </div>
 
-            <div className={`mt-4 transition-all duration-700 ease-in-out ${showing.description.visible ? 'max-h-fit opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                <p>{description}</p>
+            <div className={`flex flex-col lg:pl-10 px-0 py-auto space-y-3 lg:w-2/3 md:w-3/5 sm:w-full transition-all duration-700 ease-in-out`}>
+                <p className="lg:text-base text-sm my-auto">{description}</p>
+                <button onClick={changeImage} className="text-xs w-fit font-semibold bg-slate-600 rounded-md p-1 px-2 hover:bg-slate-500">
+                    {showing.view.buttonName}
+                </button>
             </div>
         </div>
     )

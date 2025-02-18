@@ -19,7 +19,7 @@ export function Tittle () {
         >
             <h1
               // className="flex justify-center tracking-[.045em] sm:justify-start lg:text-8xl md:text-7xl sm:text-6xl font-extrabold mb-0 hover:text-slate-300 transition-colors duration-300" 
-              className="flex lg:text-7xl md:text-6xl sm:text-5xl font-extrabold"
+              className="flex lg:text-7xl md:text-6xl sm:text-4xl font-extrabold"
                 style={{ 
                 color: 'transparent', 
                 backgroundImage: 'linear-gradient(100deg, #fcfcfc, #7e92cf)',
@@ -29,7 +29,7 @@ export function Tittle () {
             > 
               DANIEL CHAVEZ
             </h1>
-            <p className='flex md:text-lg'
+            <h3 className='flex md:text-lg sm:text-sm'
               style={{ 
                 color: 'transparent', 
                 backgroundImage: 'linear-gradient(50deg, #a86ce0, #f09e33)', 
@@ -37,7 +37,7 @@ export function Tittle () {
                 letterSpacing: '2px',
                 textShadow: '2px 2px 4px rgba(255, 255, 255, 0.185)',
                 }}  
-              >Bilingual Engineer & Full Stack Developer based on JavaScript technologies.</p>
+              >Bilingual Engineer & Full Stack Developer based on JavaScript technologies.</h3>
         </div>
     );
 };

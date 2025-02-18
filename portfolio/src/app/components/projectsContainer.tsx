@@ -2,14 +2,11 @@
 import { ProjectsType, ProjectType } from "../assets/types";
 import { useEffect, useState } from "react";
 import ProjectComponent from "./projectComponent";
-import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-
+import AOS from 'aos';
 
 
 export default function ProjectsContainer ({projects}: {projects: ProjectsType}){
-
 
     useEffect(() => {
         AOS.init({
@@ -22,7 +19,8 @@ export default function ProjectsContainer ({projects}: {projects: ProjectsType})
     // if(!loading){
     //     console.log("validación de estado de carga")
         return (
-            <div className="grid lg:grid-cols-2 sm:grid-cols-1" data-aos="fade-up">
+            <section className="flex flex-col" data-aos="fade-up">
+                <h2 className="mb-2 font-semibold text-xl">Projects:</h2>
                 {projects.map((proj: ProjectType) => {
                     return (
                         <ProjectComponent
@@ -35,7 +33,7 @@ export default function ProjectsContainer ({projects}: {projects: ProjectsType})
                         />
                     );
                 })}
-            </div>
+            </section>
         )
     // }  
 };
