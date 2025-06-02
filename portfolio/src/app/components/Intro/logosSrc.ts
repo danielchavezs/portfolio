@@ -8,6 +8,14 @@ export const logosSrc = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg",
   },
   {
+    tech: "Python",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg",
+  },
+  {
+    tech: "OpenAI",
+    src: "/openai.svg",
+  },
+  {
     tech: "Node.js",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain-wordmark.svg",
   },
@@ -16,12 +24,20 @@ export const logosSrc = [
     src: "/express.svg",
   },
   {
+    tech: "FastAPI",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-plain-wordmark.svg",
+  },  
+  {
     tech: "PostgreSQL",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain-wordmark.svg",
   },
   {
     tech: "MongoDB",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg",
+  },
+  {
+    tech: "Qdrant",
+    src: "/qdrant.svg",
   },
   {
     tech: "Mongoose",

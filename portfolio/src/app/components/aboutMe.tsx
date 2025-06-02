@@ -18,19 +18,22 @@ export function AboutMe() {
       <div className="grid grid-flow-row" data-aos="fade-up">
         <div className="flex flex-col p-4 space-y-2">
           <span className="font-semibold text-lg mb-3">
-            A few things about me:
+            Tech & Tools
           </span>
-          <ul> 📍 Colombia, South America</ul>
-          <ul> 👨🏼‍🎓 Full Stack Developer & Petroleum Engineer</ul>
-          <ul> 💻 Database, Backend and Frontend</ul>
-          <ul className="max-w-fit">
-            {" "}
-            4 years of experience in Oil & Gas Industry:
+          <ul>
+            🖥️ <strong>Backend:</strong> Python, FastAPI, Node.js, Express.js, JavaScript, TypeScript.
           </ul>
           <ul>
-            {" "}
-            Personel qualification, processes quality and project management
-            experience.
+            ⚛️ <strong>Frontend:</strong> React, Next.js, Vite, Redux, HTML5, CSS3, Tailwind CSS, Responsive Design.
+          </ul>
+          <ul>
+            🗄️ <strong>Databases:</strong> PostgreSQL, MongoDB, Qdrant, Prisma, Sequelize, Mongoose.
+          </ul>
+          <ul>
+            🤖 <strong>AI & ML:</strong> Agents, Embeddings, RAG, Generative AI integration, Fine-Tuning Validation.
+          </ul>
+          <ul>
+            🛠️ <strong>Tools & Methodologies:</strong> Git, Vercel, Render, Jest, Notion, Trello, RESTful APIs, Agile (Scrum).
           </ul>
         </div>
 
