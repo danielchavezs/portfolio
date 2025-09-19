@@ -13,13 +13,24 @@ export default function Intro () {
                     <Tittle/>
                     <div className="flex flex-col gap-4 md:text-base sm:text-sm">
                         <p>
-                            🌐 Bilingual (ENG - SPA) Full-Stack Developer with a Petroleum Engineering degree, four years of hands-on Oil & Gas experience, and a Project Management Diploma. I pick the right stack for each challenge—whether it’s Python & FastAPI powering APIs or JavaScript/TypeScript frameworks crafting front-end experiences—so every solution stays flexible, maintainable, and fit-for-purpose.
+                            AI Engineer | Software Developer specialized in building AI-driven solutions on top of a strong full-stack foundation.
                         </p>
                         <p>
-                            I’ve implemented server-side rendering (SSR), client-side rendering (CSR), and streaming data flows across the entire stack. Lately, I’ve been immersed in AI workflows: designing API endpoints for embedding-based search and RAG pipelines with vector databases, weaving generative AI features into apps, and running fine-tuning experiments on language models to tackle domain-specific needs. I love turning prototypes into polished, user-friendly tools that actually solve problems. 
+                            During this year, I’ve focused exclusively on LLMs, RAG systems, embeddings, vector databases, AI Agents, AI automations and evaluations — leveraging Python and TypeScript across both backend and AI environments, with SQL and NoSQL databases and React/Next.js for frontend. ⚡️
                         </p>
                         <p>
-                            🚀 My engineering roots and project-management background keep me grounded: I adapt quickly, communicate clearly with stakeholders, and continuously refine solutions to align technical designs with business objectives. <strong>English Level: C2.</strong> 
+                            I’ve been a key developer for DroidForce, Mankind Technology's AI support platform, achieving for clients:
+                        </p>
+                        <ul className="list-disc list-inside pl-2">
+                            <li>Increased response accuracy by 95% 📈</li>
+                            <li>Reduced resolution time by 66%</li>
+                            <li>Delivered always-on, scalable automation for enterprise environments</li>
+                        </ul>
+                        <p>
+                            My role goes beyond code — I contribute to solution design, collaborate directly with client teams during planning and follow-ups, and participate in candidate conversations for internships. This mix of technical execution and project involvement has accelerated my professional growth and given me a voice within the organization and its future.
+                        </p>
+                        <p>
+                            🌐 Bilingual (English & Spanish). Background in Full-Stack Development, Petroleum Engineering and additional formation -and experience- in Project Management.
                         </p>
                     </div>
                 </div>

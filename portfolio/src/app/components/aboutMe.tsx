@@ -30,7 +30,7 @@ export function AboutMe() {
             🗄️ <strong>Databases:</strong> PostgreSQL, MongoDB, Qdrant, Prisma, Sequelize, Mongoose.
           </ul>
           <ul>
-            🤖 <strong>AI & ML:</strong> Agents, Embeddings, RAG, Generative AI integration, Fine-Tuning Validation.
+            🤖 <strong>AI & ML:</strong> Agents, Automations Workflows,Embeddings, RAG, Generative AI integration, Fine-Tuning Validation.
           </ul>
           <ul>
             🛠️ <strong>Tools & Methodologies:</strong> Git, Vercel, Render, Jest, Notion, Trello, RESTful APIs, Agile (Scrum).
