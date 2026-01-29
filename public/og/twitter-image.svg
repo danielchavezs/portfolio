@@ -1,0 +1,26 @@
+<svg width="1200" height="628" viewBox="0 0 1200 628" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070F26" />
+      <stop offset="55%" stop-color="#0B1B3A" />
+      <stop offset="100%" stop-color="#0C1430" />
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(220 120) rotate(35) scale(420 280)">
+      <stop stop-color="#4F8CFF" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#4F8CFF" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(980 160) rotate(12) scale(380 260)">
+      <stop stop-color="#9B70FF" stop-opacity="0.28" />
+      <stop offset="1" stop-color="#9B70FF" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="628" fill="url(#bg)" />
+  <rect width="1200" height="628" fill="url(#glow1)" />
+  <rect width="1200" height="628" fill="url(#glow2)" />
+  <g opacity="0.2">
+    <circle cx="1050" cy="520" r="160" stroke="#7AA9FF" stroke-width="1" />
+    <circle cx="1050" cy="520" r="240" stroke="#7AA9FF" stroke-width="1" />
+  </g>
+  <text x="100" y="300" fill="#F8FAFF" font-size="64" font-family="Arial, sans-serif" font-weight="700" letter-spacing="2">Daniel Chavez</text>
+  <text x="100" y="360" fill="#A5B4FC" font-size="28" font-family="Arial, sans-serif" letter-spacing="3">AI Engineer &amp; Full-Stack Developer</text>
+</svg>

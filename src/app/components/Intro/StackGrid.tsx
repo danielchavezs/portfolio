@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { StackLogos } from "@/app/assets/images";
-import { logosSrc } from "./logosSrc";
+import { logosSrc } from "@/app/components/Intro/logosSrc";
 import AOS from "aos";
 import "aos/dist/aos.css";
 

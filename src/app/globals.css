@@ -3,23 +3,95 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255; /* Text color */
-  --background-start-rgb: 13, 20, 35; /* Start color for gradient */
-  --background-end-rgb: 25, 32, 50; /* End color for gradient */
+  --foreground-rgb: 238, 242, 255;
+  --muted-rgb: 148, 163, 184;
+  --background-start-rgb: 6, 12, 28;
+  --background-end-rgb: 11, 18, 38;
+  --card-rgb: 16, 23, 44;
+  --accent-blue-rgb: 80, 140, 255;
+  --accent-purple-rgb: 155, 112, 255;
+  --border-rgb: 148, 163, 184;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-    to bottom,
-    rgb(var(--background-start-rgb)),
-    rgb(var(--background-end-rgb))
-  );
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(80, 140, 255, 0.16), transparent 60%),
+    radial-gradient(800px 500px at 90% 15%, rgba(155, 112, 255, 0.12), transparent 55%),
+    linear-gradient(180deg, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  min-height: 100vh;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  width: 360px;
+  height: 360px;
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.6;
+}
+
+body::before {
+  top: -120px;
+  left: -80px;
+  background: rgba(80, 140, 255, 0.35);
+}
+
+body::after {
+  bottom: -140px;
+  right: -60px;
+  background: rgba(155, 112, 255, 0.25);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer components {
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .glass-card {
+    background: linear-gradient(
+      135deg,
+      rgba(16, 23, 44, 0.92),
+      rgba(12, 18, 36, 0.72)
+    );
+    border: 1px solid rgba(var(--border-rgb), 0.16);
+    box-shadow: 0 24px 60px rgba(5, 12, 24, 0.65);
+    backdrop-filter: blur(18px);
+  }
+
+  .glass-glow {
+    box-shadow:
+      0 0 40px rgba(80, 140, 255, 0.18),
+      0 0 80px rgba(155, 112, 255, 0.1);
+  }
+
+  .section-kicker {
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: rgba(var(--muted-rgb), 0.9);
   }
 }
 

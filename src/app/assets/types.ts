@@ -25,9 +25,11 @@ export interface Results {
 export type ProjectType = {
     id: number;
     name: string;
-    images: string[];
-    description: string;
-    href: string;
+    cover: string;
+    gallery: string[];
+    shortDescription: string;
+    fullDescription: string;
+    href?: string;
     date: string;
 }
 
@@ -38,5 +40,5 @@ export type ProjectsType = ProjectType[]
 export interface ProjectImageProps {
   src: string;
   alt: string;
-  href: string;
+  href?: string;
 }

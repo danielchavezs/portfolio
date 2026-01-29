@@ -1,23 +1,51 @@
-'use client'
-import { useState, useEffect  } from "react";
-import contactFormAction from "../actions/contactFormAction";
-import { Errors, Parameters } from "../assets/types";
-// const { MAIL_ACCESS_KEY } = process.env;
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+"use client";
+import { useState, useEffect } from "react";
+import contactFormAction from "@/app/actions/contactFormAction";
+import { Errors, Parameters } from "@/app/assets/types";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function ContactForm() {
   const [parameters, setParameters] = useState({
     name: "",
-      email: "",
-      prefix: "",
-      phone: "",
-      contactedBy: "",
-      coName: "",
-      message: ""
+    email: "",
+    prefix: "",
+    phone: "",
+    contactedBy: "",
+    coName: "",
+    message: "",
+  });
+
+  const [error, setError] = useState<Errors>({
+    name: false,
+    email: false,
+    prefix: false,
+    phone: false,
+    contactedBy: false,
+    coName: false,
+    message: false,
+    count: 0,
+  });
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
     });
-  
-    const [error, setError] = useState({
+  }, []);
+
+  const inputClass =
+    "mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-blue-400/60 focus:outline-none";
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const property = event.target.name;
+    const value = event.target.value;
+    setParameters({ ...parameters, [property]: value });
+  };
+
+  const resetErrors = () => {
+    setError({
       name: false,
       email: false,
       prefix: false,
@@ -25,260 +53,281 @@ export default function ContactForm() {
       contactedBy: false,
       coName: false,
       message: false,
-      count: 0
+      count: 0,
     });
-  
-    useEffect(() => {
-        AOS.init({
-          // Configuración opcional
-          duration: 1000,
-        });
-      }, []);
+  };
 
+  const resetAll = () => {
+    setParameters({
+      name: "",
+      email: "",
+      prefix: "",
+      phone: "",
+      contactedBy: "",
+      coName: "",
+      message: "",
+    });
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      const property = event.target.name;
-      let value = event.target.value;
-      setParameters({ ...parameters, [property]: (value) });
-    };
-    
-    const resetErrors = () => {
-      setError({
-        name: false,
-        email: false,
-        prefix: false,
-        phone: false,
-        contactedBy: false,
-        coName: false,
-        message: false,
-        count: 0
-      });
-    };
-    
-    const resetAll = () => {  
-      setParameters({
-        name: "",
-        email: "",
-        prefix: "",
-        phone: "",
-        contactedBy: "",
-        coName: "",
-        message: "",
-      });
-  
-      resetErrors();
-    };
-    
-    const validateForm = async () => {
-      resetErrors();
-      const requiredFields: (keyof Parameters)[] = ["name", "email", "prefix", "phone", "contactedBy", "coName", "message"];
-      let fieldsCompleted = true;
-      
-      const newErrors = {name: false, email: false, prefix: false, phone: false, contactedBy: false, coName: false, message: false, count: 0};
-      for (const key of requiredFields) {
-        if (parameters[key] === "") {
-          if(key === "coName" && parameters.contactedBy === "person"){
-            console.log("Exception case: when contacted by person, there is no organization name required.")
-          } else{
-            newErrors[key] = true;
-            fieldsCompleted = false;
-            newErrors.count++
-          }
-        };
-      };
-      setError(newErrors)
-      return fieldsCompleted;
-    };
-    
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      const isValid = await validateForm();
-      console.log(isValid)
-      
-      if (!isValid) {
-        console.log("ERRORS REGISTERED:", error);
-        alert("Please complete all required fields before submiting.");  // remember to improve ir with sweetalert2
-        return false;
-      };
-      try {
-        const { name, contactedBy, coName, message } = parameters;
-        const phone = Number(parameters.phone);
-        const prefix = Number(parameters.prefix)
-  
-        const res = await contactFormAction(name, prefix, phone, contactedBy, coName, message);
-        console.log("Results in client side: ", res);
+    resetErrors();
+  };
 
-        if(res.success){
-          window.alert(res.message);
-        };
-      } catch (err) {
-        window.alert(error);
+  const validateForm = async () => {
+    resetErrors();
+    const requiredFields: (keyof Parameters)[] = [
+      "name",
+      "email",
+      "prefix",
+      "phone",
+      "contactedBy",
+      "coName",
+      "message",
+    ];
+    let fieldsCompleted = true;
+
+    const newErrors: Errors = {
+      name: false,
+      email: false,
+      prefix: false,
+      phone: false,
+      contactedBy: false,
+      coName: false,
+      message: false,
+      count: 0,
+    };
+    for (const key of requiredFields) {
+      if (parameters[key] === "") {
+        if (key === "coName" && parameters.contactedBy === "person") {
+          continue;
+        }
+        newErrors[key] = true;
+        fieldsCompleted = false;
+        newErrors.count++;
       }
-    };
-    // console.log("PARAMETERS CATCHED: ", parameters);
-    return (
-        <div className="bg-gradient-to-dark flex flex-col mx-auto items-center w-fit h-fit lg:p-8 md:p-6 sm:p-4 rounded-xl" data-aos="zoom-out">
-            {/* <h1 className="flex font-bold text-xl mb-5 ">Contact me:</h1> */}
-            {/* <div className="bg-white flex lg:flex-row md:flex-col md:rounded-2xl sm:flex-col max-w-fit shadow-2xl lg:rounded-2xl"> */}
-    
-              <div className="flex justify-between">
+    }
+    setError(newErrors);
+    return fieldsCompleted;
+  };
 
-                <form onSubmit={handleSubmit}>
-                <div className="flex justify-between mb-8">
-                  <h2 className="text-xl font-extrabold"> Contact Me </h2>
-                  <button
-                    className="text-gray-200 font-semibold underline text-xs rounded-md p-2 transition-all transform hover:scale-105 hover:bg-slate-600 hover:no-underline"
-                    type="button"
-                    onClick={resetAll}
-                  >
-                    {" "}
-                    Clear All
-                  </button>
-                </div>
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const isValid = await validateForm();
 
-                    <div className="mb-4">
-                        <label className="font-medium ">
-                            Name
-                        </label>
-                        <input
-                            className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
-                            id="name"
-                            type="text"
-                            name="name"
-                            value={parameters.name}
-                            onChange={handleChange}
-                        />
-                        <span className={error.name? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
-                    </div>
+    if (!isValid) {
+      window.alert("Please complete all required fields before submitting.");
+      return;
+    }
+    try {
+      const { name, contactedBy, coName, message } = parameters;
+      const phone = Number(parameters.phone);
+      const prefix = Number(parameters.prefix);
 
-                    <div className="mb-4">
-                        <label className="font-medium ">
-                            e-mail
-                        </label>
-                        <input
-                            className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
-                            id="email"
-                            type="email"
-                            name="email"
-                            value={parameters.email}
-                            onChange={handleChange}
-                        />
-                        <span className={error.email? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
-                    </div>
+      const res = await contactFormAction(
+        name,
+        prefix,
+        phone,
+        contactedBy,
+        coName,
+        message
+      );
 
-                    <div className="flex md:flex-row sm:flex-col justify-between md:space-x-8 sm:space-x-0 sm:space-y-3 md:space-y-0">
-                      <div className="flex flex-col">
-                          <label className="font-medium ">
-                              Prefix
-                          </label>
-                          <input
-                              className="px-2 pb-1 mt-1 w-20 font-bold text-black rounded-sm"
-                              id="prefix"
-                              type="number"
-                              name="prefix"
-                              value={parameters.prefix}
-                              onChange={handleChange}
-                          />
-                          <span className={error.prefix? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
-                      </div>
+      if (res && typeof res === "object" && "success" in res && res.success) {
+        window.alert(res.message);
+      }
+    } catch (err) {
+      window.alert(String(err));
+    }
+  };
 
-                      <div className="flex flex-col">
-                          <label className="font-medium ">
-                              Phone
-                          </label>
-                          <input
-                              className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
-                              id="phone"
-                              type="number"
-                              name="phone"
-                              value={parameters.phone}
-                              onChange={handleChange}
-                          />
-                          <span className={error.phone? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
-                      </div>
-                    </div>
+  return (
+    <div className="flex flex-col gap-6" data-aos="zoom-out">
+      <div className="flex flex-col gap-2">
+        <span className="section-kicker">Contact</span>
+        <h2 className="font-display text-3xl">Let's build something great</h2>
+        <p className="text-sm text-slate-300">
+          Tell me about your project, idea, or opportunity. I'll reply within 24-48 hours.
+        </p>
+      </div>
 
-
-                    <div className="my-4">
-                      <label className="">
-                        Contact as:
-                      </label>
-  
-                      <div className="flex flex-col items-start">
-                        <label className="">
-                          <input
-                            type="radio"
-                            className="form-radio"
-                            name="contactedBy"
-                            value="person"
-                            checked={parameters.contactedBy === "person"}
-                            onChange={handleChange}
-                            id="person"
-                          />
-                          <span className="ml-2 text-sm font-bold">Person</span>
-                        </label> 
-
-                        <label className="">
-                          <input
-                            type="radio"
-                            className="form-radio"
-                            name="contactedBy"
-                            value="organization"
-                            checked={parameters.contactedBy === "organization"}
-                            onChange={handleChange}
-                            id="organization"
-                          />
-                          <span className="ml-2 text-sm font-bold">Organization</span>
-                        </label>
-                      </div>
-                      <span className={error.contactedBy? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
-                    </div>
-
-                    <div className={parameters.contactedBy === "organization" ? "mb-4" : "hidden"}>
-                        <label className="font-medium ">
-                            Company´s Name 
-                            {/* <span className="text-xs text-gray-700">(optional)</span> */}
-                        </label>
-                        <input
-                            className="px-2 pb-1 mt-1 w-full font-bold text-black rounded-sm"
-                            id="coName"
-                            type="text"
-                            name="coName"
-                            value={parameters.coName}
-                            onChange={handleChange}
-                        />
-                        <span className={error.coName? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
-                    </div>
-
-                    <div className="mb-4">
-                        <label className="font-medium ">
-                            Message
-                        </label>
-                        <textarea
-                            className="px-2 mt-1 w-full min-h-24 h-fit font-bold text-black rounded-sm"
-                            id="message"
-                            name="message"
-                            value={parameters.message}
-                            onChange={handleChange}
-                        />
-                        <span className={error.message? "text-xs font-semibold text-red-500": "hidden"}>This field is required</span>
-                    </div>
-
-                  {/* <div className=""> */}
-                    <button
-                      type="submit"
-                      className="bg-slate-600 rounded-md p-2 transition-all transform hover:bg-slate-500 hover:scale-105"
-                    >
-                      {/* <CalculatorIcon/> puede ser un logo de mail */}
-                      {" "}
-                      Send Message{" "}
-                    </button>
-                  {/* </div> */}
-
-                </form>
-              </div>
-
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <div className="flex items-center justify-between">
+          <p className="text-sm text-slate-400">All fields are required</p>
+          <button
+            className="rounded-full border border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300 transition hover:border-white/30"
+            type="button"
+            onClick={resetAll}
+          >
+            Clear all
+          </button>
         </div>
 
-    )
-};
+        <div>
+          <label className="text-sm font-medium text-slate-200">Name</label>
+          <input
+            className={inputClass}
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Your name"
+            value={parameters.name}
+            onChange={handleChange}
+          />
+          <span
+            className={
+              error.name ? "text-xs font-semibold text-red-400" : "hidden"
+            }
+          >
+            This field is required
+          </span>
+        </div>
+
+        <div>
+          <label className="text-sm font-medium text-slate-200">Email</label>
+          <input
+            className={inputClass}
+            id="email"
+            type="email"
+            name="email"
+            placeholder="you@email.com"
+            value={parameters.email}
+            onChange={handleChange}
+          />
+          <span
+            className={
+              error.email ? "text-xs font-semibold text-red-400" : "hidden"
+            }
+          >
+            This field is required
+          </span>
+        </div>
+
+        <div className="flex flex-col gap-4 md:flex-row">
+          <div className="flex-1">
+            <label className="text-sm font-medium text-slate-200">Prefix</label>
+            <input
+              className={inputClass}
+              id="prefix"
+              type="number"
+              name="prefix"
+              placeholder="+57"
+              value={parameters.prefix}
+              onChange={handleChange}
+            />
+            <span
+              className={
+                error.prefix ? "text-xs font-semibold text-red-400" : "hidden"
+              }
+            >
+              This field is required
+            </span>
+          </div>
+
+          <div className="flex-[2]">
+            <label className="text-sm font-medium text-slate-200">Phone</label>
+            <input
+              className={inputClass}
+              id="phone"
+              type="number"
+              name="phone"
+              placeholder="Phone number"
+              value={parameters.phone}
+              onChange={handleChange}
+            />
+            <span
+              className={
+                error.phone ? "text-xs font-semibold text-red-400" : "hidden"
+              }
+            >
+              This field is required
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <label className="text-sm font-medium text-slate-200">Contact as</label>
+          <div className="mt-2 flex flex-col gap-2">
+            <label className="flex items-center gap-2 text-sm text-slate-200">
+              <input
+                type="radio"
+                className="accent-blue-400"
+                name="contactedBy"
+                value="person"
+                checked={parameters.contactedBy === "person"}
+                onChange={handleChange}
+                id="person"
+              />
+              Person
+            </label>
+
+            <label className="flex items-center gap-2 text-sm text-slate-200">
+              <input
+                type="radio"
+                className="accent-blue-400"
+                name="contactedBy"
+                value="organization"
+                checked={parameters.contactedBy === "organization"}
+                onChange={handleChange}
+                id="organization"
+              />
+              Organization
+            </label>
+          </div>
+          <span
+            className={
+              error.contactedBy
+                ? "text-xs font-semibold text-red-400"
+                : "hidden"
+            }
+          >
+            This field is required
+          </span>
+        </div>
+
+        <div className={parameters.contactedBy === "organization" ? "" : "hidden"}>
+          <label className="text-sm font-medium text-slate-200">Company name</label>
+          <input
+            className={inputClass}
+            id="coName"
+            type="text"
+            name="coName"
+            placeholder="Company or organization"
+            value={parameters.coName}
+            onChange={handleChange}
+          />
+          <span
+            className={
+              error.coName ? "text-xs font-semibold text-red-400" : "hidden"
+            }
+          >
+            This field is required
+          </span>
+        </div>
+
+        <div>
+          <label className="text-sm font-medium text-slate-200">Message</label>
+          <textarea
+            className={`${inputClass} min-h-[140px]`}
+            id="message"
+            name="message"
+            placeholder="Share the details of what you need"
+            value={parameters.message}
+            onChange={handleChange}
+          />
+          <span
+            className={
+              error.message ? "text-xs font-semibold text-red-400" : "hidden"
+            }
+          >
+            This field is required
+          </span>
+        </div>
+
+        <button
+          type="submit"
+          className="rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:opacity-90"
+        >
+          Send message
+        </button>
+      </form>
+    </div>
+  );
+}

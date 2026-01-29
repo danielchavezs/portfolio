@@ -11,67 +11,63 @@ Scope: refresh UI/UX with 2025/26 look, keep Intro + InfiniteSlider mostly intac
 - Glass effect and subtle glow can be used sparingly (cards/modal/sections).
 
 ## 1) Data Model and Assets
-- [ ] Update `ProjectType` in `src/app/assets/types.ts` to support:
+- [x] Update `ProjectType` in `src/app/assets/types.ts` to support:
   - `shortDescription: string`
   - `fullDescription: string`
   - `gallery: string[]`
   - `href?: string`
-  - keep `images` or replace with `cover` (decide and apply consistently)
-- [ ] Update `src/app/assets/seed.ts` to the new shape:
+  - replace `images` with `cover`
+- [x] Update `src/app/assets/seed.ts` to the new shape:
   - preserve existing full description content verbatim
   - add `shortDescription` teasers
   - add `gallery` (include cover + additional images)
   - remove hard dependency on `href`
-- [ ] Reorganize project assets to:
-  - `public/projects/6/cover.png`, `public/projects/6/gallery-1.png`, etc
-  - same for ids 4,3,2,1 (and any new ones)
-- [ ] Update all image references to match the new paths
+- [x] Reorganize project assets to:
+  - `public/projects/{id}/cover.png`, `public/projects/{id}/gallery-1.png`, etc
+- [x] Update all image references to match the new paths
 
 ## 2) UI Components: Projects
-- [ ] Create a Projects section layout refresh (grid or stacked cards):
+- [x] Create a Projects section layout refresh (grid or stacked cards):
   - use card surface with optional glass effect
   - include title, date, tech tags (optional), teaser text
   - add a CTA button "View case study"
-- [ ] Implement modal + gallery:
-  - use shadcn `Dialog` for desktop
-  - use shadcn `Drawer` for mobile (vertical layout)
-  - use shadcn `Carousel` for gallery
+- [x] Implement modal + gallery (custom modal + scroll-snap gallery):
   - gallery horizontal on desktop, vertical on mobile
   - include full description + images
   - include project link button:
     - when `href` exists -> normal link
     - when missing -> disabled button with "Not available"
-- [ ] Ensure AOS remains functional or replace with consistent animation
+- [x] Ensure AOS remains functional or replace with consistent animation
 
 ## 3) About + Contact Refresh
-- [ ] Reflow layout into modern section blocks:
+- [x] Reflow layout into modern section blocks:
   - two-column on desktop, stacked on mobile
   - add glass card for contact info and resume
   - keep content copy the same
-- [ ] Improve CTA clarity (LinkedIn/GitHub/WhatsApp/Email)
-- [ ] Keep Contact form intact, update styles only
+- [x] Improve CTA clarity (LinkedIn/GitHub/WhatsApp/Email)
+- [x] Keep Contact form intact, update styles only
 
 ## 4) Visual System
-- [ ] Update `src/app/globals.css` to define new CSS variables:
+- [x] Update `src/app/globals.css` to define new CSS variables:
   - background gradient (deep navy + blue)
   - subtle purple accent in gradients only
   - glass surface style (backdrop blur, border, shadow)
   - optional glow utility
-- [ ] Add soft background shapes (pseudo-elements or divs) for depth
-- [ ] Adjust typography scale and spacing (headings more impact)
+- [x] Add soft background shapes (pseudo-elements or divs) for depth
+- [x] Adjust typography scale and spacing (headings more impact)
 
 ## 5) SEO and Metadata
-- [ ] Update `src/app/layout.tsx` metadata:
+- [x] Update `src/app/layout.tsx` metadata:
   - title/description
   - Open Graph + Twitter
   - icons and OG image assets
-- [ ] Create simple gradient OG/Twitter images in `public/og/`
+- [x] Create simple gradient OG/Twitter images in `public/og/`
 
 ## 6) QA and Polish
 - [ ] Responsive checks (desktop/tablet/mobile)
-- [ ] Modal focus trap and keyboard close (Dialog/Drawer default)
-- [ ] Ensure `href` optional does not break
-- [ ] Run `pnpm lint` and `pnpm build` if time permits
+- [x] Modal focus + keyboard close (Escape + scroll lock)
+- [x] Ensure `href` optional does not break
+- [x] Run `pnpm build`
 
 ## Notes for Agent
 - Keep changes minimal and aligned with existing component patterns.

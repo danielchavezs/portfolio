@@ -1,11 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import { logosSrc } from "./Intro/logosSrc";
+import { logosSrc } from "@/app/components/Intro/logosSrc";
 
 
 export default function InfiniteSlider() {
   return (
-    <div className="overflow-hidden relative w-full">
+    <div className="relative w-full max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-slate-950/40 py-6">
       <motion.div
         className="flex space-x-14 w-max"
         animate={{ x: ["0%", "-50%"] }} // 🔥 Reduce el desplazamiento para que el inicio y final coincidan

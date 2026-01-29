@@ -1,5 +1,5 @@
 // const { MAIL_ACCESS_KEY } = process.env;
-import { MAIL_ACCESS_KEY } from "../assets/utils";
+import { MAIL_ACCESS_KEY } from "@/app/assets/utils";
 
 export default async function contactFormAction (name: string, prefix: number, phone: number, contactedBy: string, coName: string, message: string){
     // const MAIL_ACCESS_KEY = "eaa633cc-efd4-4234-ad1f-60f07519b9d5"

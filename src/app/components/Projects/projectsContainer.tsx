@@ -1,9 +1,9 @@
 'use client'
-import { ProjectsType, ProjectType } from "../../assets/types";
-import { useEffect, useState } from "react";
-import ProjectComponent from "./projectComponent";
-import 'aos/dist/aos.css';
-import AOS from 'aos';
+import { ProjectsType, ProjectType } from "@/app/assets/types";
+import { useEffect } from "react";
+import ProjectComponent from "@/app/components/Projects/projectComponent";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 
 export default function ProjectsContainer ({projects}: {projects: ProjectsType}){
@@ -19,21 +19,26 @@ export default function ProjectsContainer ({projects}: {projects: ProjectsType})
     // if(!loading){
     //     console.log("validación de estado de carga")
         return (
-            <section className="flex flex-col" data-aos="fade-up">
-                <h2 className="mb-2 font-semibold text-xl">Projects:</h2>
-                {projects.map((proj: ProjectType) => {
-                    return (
-                        <ProjectComponent
-                            key={proj.id}
-                            id={proj.id}
-                            name={proj.name}
-                            images={proj.images}
-                            description={proj.description}
-                            href={proj.href}
-                            date={proj.date}
-                        />
-                    );
-                })}
+            <section id="projects" className="flex w-full max-w-6xl flex-col gap-8" data-aos="fade-up">
+                <div className="flex flex-col gap-3">
+                    <span className="section-kicker">Selected Work</span>
+                    <div className="flex flex-col gap-2">
+                        <h2 className="font-display text-3xl md:text-4xl">Projects and case studies</h2>
+                        <p className="text-sm text-slate-300 md:text-base">
+                            A curated set of recent projects with full context, screenshots, and outcomes.
+                        </p>
+                    </div>
+                </div>
+                <div className="flex flex-col gap-6">
+                    {projects.map((proj: ProjectType) => {
+                        return (
+                            <ProjectComponent
+                                key={proj.id}
+                                {...proj}
+                            />
+                        );
+                    })}
+                </div>
             </section>
         )
     // }  

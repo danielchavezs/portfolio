@@ -1,17 +1,17 @@
 import { ProfilePicture } from "@/app/assets/images";
-import { Tittle } from "./Tittle";
+import { Tittle } from "@/app/components/Intro/Tittle";
 
 
 export default function Intro () {
     return (
-        <section className="intro">
-            <div className="flex w-full sm:flex-col lg:flex-row items-center lg:px-14 sm:px-0 lg:gap-14 sm:gap-8 border-0">
-                <div className="flex items-center sm:max-w-44 md:max-w-72 border-0 ">
+        <section id="home" className="intro w-full max-w-6xl">
+            <div className="flex w-full flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-14">
+                <div className="flex w-full max-w-[220px] items-center justify-center md:max-w-[280px] lg:max-w-[320px]">
                     <ProfilePicture/>
                 </div>
-                <div className="flex flex-col gap-6 lg:w-4/5 sm:w-full">
+                <div className="flex flex-col gap-6 lg:w-4/5">
                     <Tittle/>
-                    <div className="flex flex-col gap-4 md:text-base sm:text-sm">
+                    <div className="flex flex-col gap-4 text-sm text-slate-200 md:text-base">
                         <p>
                             AI Engineer | Software Developer specialized in building AI-driven solutions on top of a strong full-stack foundation.
                         </p>
@@ -21,7 +21,7 @@ export default function Intro () {
                         <p>
                             I’ve been a key developer for DroidForce, Mankind Technology's AI support platform, achieving for clients:
                         </p>
-                        <ul className="list-disc list-inside pl-2">
+                        <ul className="list-disc list-inside pl-2 text-slate-300">
                             <li>Increased response accuracy by 95% 📈</li>
                             <li>Reduced resolution time by 66%</li>
                             <li>Delivered always-on, scalable automation for enterprise environments</li>

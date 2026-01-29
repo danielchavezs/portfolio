@@ -1,5 +1,5 @@
 // 'use client'
-import { MiniLogos } from "../assets/images";
+import { MiniLogos } from "@/app/assets/images";
 
 export function Footer () {
     return (

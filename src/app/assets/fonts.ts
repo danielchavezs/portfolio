@@ -10,9 +10,11 @@ export const lusitana = Lusitana({
 export const plusJakartaSans = Plus_Jakarta_Sans({
     weight: ['500', '700'],
     subsets: ['latin'],
+    variable: '--font-body',
 });
 
 export const briColage = Bricolage_Grotesque({
     weight: ['500', '700'],
     subsets: ['latin'],
+    variable: '--font-display',
 })

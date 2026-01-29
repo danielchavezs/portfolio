@@ -1,57 +1,63 @@
-'use client'
+"use client";
+
 import { useState } from "react";
-import { ProjectImage } from "../../assets/images";
-import { ProjectType } from "../../assets/types";
+import Image from "next/image";
+import ProjectModal from "@/app/components/Projects/ProjectModal";
+import { ProjectType } from "@/app/assets/types";
 
-export default function ProjectComponent({ id, name, images, description, href, date }: ProjectType) {
+export default function ProjectComponent(project: ProjectType) {
+  const [isOpen, setIsOpen] = useState(false);
 
-    const [showing, setShowing] = useState({
-        description: {
-            visible: true,
-            buttonName: "Show Description"
-        },
-        view: {
-            img: images[0],
-            buttonName: "View Mobile"
-        }
-    });
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
 
-    const changeImage = () => {
-        if (showing.view.img === images[0]) {
-            setShowing({
-                ...showing,
-                view: {
-                    img: images[1],
-                    buttonName: "View Desktop ",
-                }, 
-            });
-        } else {
-            setShowing({
-                ...showing,
-                view: {
-                    img: images[0],
-                    buttonName: "View Mobile",
-                }, 
-            });
-        }
-    };
-
-    return (
-        <div className="flex md:flex-row sm:flex-col gap-4 p-4 rounded-md border-slate-800 w-full hover:border-0 hover:bg-gradient-to-dark">
-            <div className="space-y-3 lg:w-1/3 md:w-2/5 sm:w-full">
-                <h3 className="font-semibold md:text-lg sm:text-base text-center">{name}</h3>
-                <div className="flex justify-center rounded-xl transition-all hover:scale-105">
-                    <ProjectImage alt={name} src={showing.view.img} href={href}/>
-                </div>
+  return (
+    <>
+      <article className="group relative flex flex-col gap-6 rounded-3xl glass-card p-6 transition hover:border-white/30 hover:shadow-[0_0_50px_rgba(80,140,255,0.16)] md:p-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center">
+          <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-slate-900/50 md:w-[45%]">
+            <Image
+              src={project.cover}
+              alt={`${project.name} cover`}
+              width={1200}
+              height={800}
+              className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+              sizes="(max-width: 900px) 100vw, 45vw"
+            />
+          </div>
+          <div className="flex flex-1 flex-col gap-4">
+            <span className="section-kicker">{project.date}</span>
+            <h3 className="font-display text-2xl md:text-3xl">{project.name}</h3>
+            <p className="text-sm text-slate-300 md:text-base">
+              {project.shortDescription}
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                onClick={handleOpen}
+                className="rounded-full bg-gradient-to-r from-blue-500/90 to-indigo-500/80 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-lg shadow-blue-500/30 transition hover:scale-[1.02]"
+              >
+                View case study
+              </button>
+              {project.href ? (
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80 transition hover:border-white/40 hover:text-white"
+                >
+                  Live URL
+                </a>
+              ) : (
+                <span className="rounded-full border border-dashed border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                  Not available
+                </span>
+              )}
             </div>
-
-            <div className={`flex flex-col lg:pl-10 px-0 py-auto space-y-3 lg:w-2/3 md:w-3/5 sm:w-full transition-all duration-700 ease-in-out`}>
-                <p className="text-sm text-gray-400">{date}</p>
-                <p className="lg:text-base text-sm my-auto">{description}</p>
-                <button onClick={changeImage} className="text-xs w-fit font-semibold bg-slate-600 rounded-md p-1 px-2 hover:bg-slate-500">
-                    {showing.view.buttonName}
-                </button>
-            </div>
+          </div>
         </div>
-    )
-};
+      </article>
+      <ProjectModal project={project} isOpen={isOpen} onClose={handleClose} />
+    </>
+  );
+}
