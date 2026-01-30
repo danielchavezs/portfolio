@@ -7,8 +7,10 @@ import { briColage, plusJakartaSans } from "@/app/assets/fonts";
 const siteTitle = "Daniel Chavez — AI Engineer & Full-Stack Developer";
 const siteDescription =
   "AI Engineer and Software Developer focused on LLM systems, RAG pipelines, and scalable full-stack products. Based in Colombia, working globally.";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: siteTitle,
     template: "%s — Daniel Chavez",

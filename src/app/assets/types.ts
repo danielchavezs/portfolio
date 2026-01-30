@@ -27,6 +27,7 @@ export type ProjectType = {
     name: string;
     cover: string;
     gallery: string[];
+    mobileGallery?: string[];
     shortDescription: string;
     fullDescription: string;
     href?: string;

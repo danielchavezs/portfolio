@@ -5,7 +5,7 @@ import { Tittle } from "@/app/components/Intro/Tittle";
 export default function Intro () {
     return (
         <section id="home" className="intro w-full max-w-6xl">
-            <div className="flex w-full flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-14">
+            <div className="flex w-full flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-14">
                 <div className="flex w-full max-w-[220px] items-center justify-center md:max-w-[280px] lg:max-w-[320px]">
                     <ProfilePicture/>
                 </div>

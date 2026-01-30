@@ -4,25 +4,42 @@ import { useState } from "react";
 import Image from "next/image";
 import ProjectModal from "@/app/components/Projects/ProjectModal";
 import { ProjectType } from "@/app/assets/types";
+import Loader from "@/app/components/Loader";
 
 export default function ProjectComponent(project: ProjectType) {
   const [isOpen, setIsOpen] = useState(false);
+  const [coverLoaded, setCoverLoaded] = useState(false);
+  const useLoader = true;
 
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => setIsOpen(false);
+
+  const handleCoverLoad = () => {
+    setCoverLoaded(true);
+  };
+
 
   return (
     <>
       <article className="group relative flex flex-col gap-6 rounded-3xl glass-card p-6 transition hover:border-white/30 hover:shadow-[0_0_50px_rgba(80,140,255,0.16)] md:p-8">
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
           <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-slate-900/50 md:w-[45%]">
+            {!coverLoaded && useLoader && (
+              <div className="absolute inset-0 flex items-center justify-center bg-slate-900/70">
+                <Loader />
+              </div>
+            )}
+            {!coverLoaded && !useLoader && (
+              <div className="absolute inset-0 animate-pulse bg-slate-900/70" />
+            )}
             <Image
               src={project.cover}
               alt={`${project.name} cover`}
               width={1200}
               height={800}
-              className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+              className={`h-full w-full object-cover transition duration-500 group-hover:scale-[1.02] ${coverLoaded ? "opacity-100" : "opacity-0"}`}
               sizes="(max-width: 900px) 100vw, 45vw"
+              onLoad={handleCoverLoad}
             />
           </div>
           <div className="flex flex-1 flex-col gap-4">

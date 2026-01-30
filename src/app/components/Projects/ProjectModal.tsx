@@ -24,12 +24,10 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
       }
     };
 
-    document.body.style.overflow = "hidden";
     document.addEventListener("keydown", handleKey);
     modalRef.current?.focus();
 
     return () => {
-      document.body.style.overflow = "";
       document.removeEventListener("keydown", handleKey);
     };
   }, [isOpen, onClose]);
@@ -50,7 +48,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
         aria-modal="true"
         tabIndex={-1}
         onClick={(event) => event.stopPropagation()}
-        className="relative z-10 w-full max-w-4xl rounded-3xl glass-card glass-glow p-6 md:p-8"
+        className="scrollbar-glass relative z-10 w-full max-w-4xl max-h-[85vh] overflow-y-auto rounded-3xl glass-card glass-glow p-6 md:p-8"
       >
         <header className="flex flex-col gap-4 border-b border-white/10 pb-4 md:flex-row md:items-center md:justify-between">
           <div className="space-y-2">
@@ -67,7 +65,11 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
         </header>
 
         <div className="mt-6 flex flex-col gap-6">
-          <ProjectGallery images={project.gallery} title={project.name} />
+          <ProjectGallery
+            images={project.gallery}
+            mobileImages={project.mobileGallery}
+            title={project.name}
+          />
 
           <div className="space-y-4 text-sm leading-relaxed text-slate-200 md:text-base">
             <p>{project.fullDescription}</p>

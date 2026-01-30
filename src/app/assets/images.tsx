@@ -93,13 +93,14 @@ export function ProfilePicture () {
 
   // Needs to be wrapped in a container to define its final size. Thinked to be 1:1.
   return (
-    <div className="flex items-center rounded-full overflow-hidden w-full h-full ">
+    <div className="relative aspect-square w-full overflow-hidden rounded-full">
       <Image
         src="/CV/LinkedIn_Profile.jpeg"
-        alt="Daniel Chávez"
-        width={300}
-        height={300}
-        className="h-full w-full object-cover"
+        alt="Daniel Chavez"
+        fill
+        className="object-cover"
+        sizes="(max-width: 900px) 240px, 320px"
+        priority
       />
     </div>
   );

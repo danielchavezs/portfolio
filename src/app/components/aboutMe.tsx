@@ -12,6 +12,41 @@ export function AboutMe() {
     });
   }, []);
 
+  const techCards = [
+    {
+      title: "Backend",
+      icon: "🖥️",
+      items: ["Python", "FastAPI", "Node.js", "Express.js", "JavaScript", "TypeScript"],
+    },
+    {
+      title: "Frontend",
+      icon: "⚛️",
+      items: ["React", "Next.js", "Vite", "Redux", "HTML5", "CSS3", "Tailwind CSS"],
+    },
+    {
+      title: "Databases",
+      icon: "🗄️",
+      items: ["PostgreSQL", "MongoDB", "Qdrant", "Prisma", "Sequelize", "Mongoose"],
+    },
+    {
+      title: "AI & ML",
+      icon: "🤖",
+      items: [
+        "Agents",
+        "Automation Workflows",
+        "Embeddings",
+        "RAG",
+        "Generative AI integration",
+        "Fine-tuning validation",
+      ],
+    },
+    {
+      title: "Tools & Methods",
+      icon: "🛠️",
+      items: ["Git", "Vercel", "Render", "Jest", "Notion", "Trello", "REST APIs", "Agile (Scrum)"],
+    },
+  ];
+
   return (
     <section
       id="about"
@@ -24,29 +59,22 @@ export function AboutMe() {
           <p className="mt-3 text-sm text-slate-300 md:text-base">
             A snapshot of the stack and methodologies I use to ship AI-driven products.
           </p>
-          <ul className="mt-6 space-y-3 text-sm text-slate-200 md:text-base">
-            <li>
-              🖥️ <span className="font-semibold text-white">Backend:</span> Python,
-              FastAPI, Node.js, Express.js, JavaScript, TypeScript.
-            </li>
-            <li>
-              ⚛️ <span className="font-semibold text-white">Frontend:</span> React,
-              Next.js, Vite, Redux, HTML5, CSS3, Tailwind CSS, Responsive Design.
-            </li>
-            <li>
-              🗄️ <span className="font-semibold text-white">Databases:</span> PostgreSQL,
-              MongoDB, Qdrant, Prisma, Sequelize, Mongoose.
-            </li>
-            <li>
-              🤖 <span className="font-semibold text-white">AI & ML:</span> Agents,
-              Automations Workflows, Embeddings, RAG, Generative AI integration,
-              Fine-Tuning Validation.
-            </li>
-            <li>
-              🛠️ <span className="font-semibold text-white">Tools & Methodologies:</span> Git,
-              Vercel, Render, Jest, Notion, Trello, RESTful APIs, Agile (Scrum).
-            </li>
-          </ul>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {techCards.map((card) => (
+              <div
+                key={card.title}
+                className="rounded-2xl border border-white/10 bg-slate-950/50 p-4 transition hover:border-white/25"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">{card.icon}</span>
+                  <p className="text-sm font-semibold text-white">{card.title}</p>
+                </div>
+                <p className="mt-3 text-sm text-slate-300">
+                  {card.items.join(", ")}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="glass-card rounded-3xl p-6 md:p-8">

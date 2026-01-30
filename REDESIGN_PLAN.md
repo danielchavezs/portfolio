@@ -15,12 +15,14 @@ Scope: refresh UI/UX with 2025/26 look, keep Intro + InfiniteSlider mostly intac
   - `shortDescription: string`
   - `fullDescription: string`
   - `gallery: string[]`
+  - `mobileGallery?: string[]`
   - `href?: string`
   - replace `images` with `cover`
 - [x] Update `src/app/assets/seed.ts` to the new shape:
   - preserve existing full description content verbatim
   - add `shortDescription` teasers
   - add `gallery` (include cover + additional images)
+  - add `mobileGallery` for mobile-specific assets
   - remove hard dependency on `href`
 - [x] Reorganize project assets to:
   - `public/projects/{id}/cover.png`, `public/projects/{id}/gallery-1.png`, etc
@@ -68,6 +70,15 @@ Scope: refresh UI/UX with 2025/26 look, keep Intro + InfiniteSlider mostly intac
 - [x] Modal focus + keyboard close (Escape + scroll lock)
 - [x] Ensure `href` optional does not break
 - [x] Run `pnpm build`
+- [x] Add loader mock component for future integration
+
+## Post-Plan Enhancements (Applied)
+- Added reusable SVG loader component with updated purple tone (`src/app/components/Loader.tsx`) and saved asset (`public/loader.svg`).
+- Restored original purple-to-orange gradient for the hero subtitle (`src/app/components/Intro/Tittle.tsx`).
+- Recentered Intro profile picture alignment on desktop (`src/app/components/Intro/Intro.tsx`).
+- Enabled modal internal scrolling without locking page scroll (`src/app/components/Projects/ProjectModal.tsx`).
+- Added themed global scrollbars to match the app background (`src/app/globals.css`).
+- Updated gallery UX to show both desktop and mobile images with filters and labels (`src/app/components/Projects/ProjectGallery.tsx`).
 
 ## Notes for Agent
 - Keep changes minimal and aligned with existing component patterns.

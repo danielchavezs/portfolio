@@ -22,6 +22,13 @@ body {
   min-height: 100vh;
   font-family: var(--font-body);
   overflow-x: hidden;
+  scrollbar-color: rgba(155, 112, 255, 0.6) rgba(12, 18, 36, 0.7);
+  scrollbar-width: thin;
+}
+
+html {
+  scrollbar-color: rgba(155, 112, 255, 0.7) rgba(12, 18, 36, 0.75);
+  scrollbar-width: thin;
 }
 
 body::before,
@@ -93,6 +100,26 @@ body::after {
     font-size: 0.7rem;
     color: rgba(var(--muted-rgb), 0.9);
   }
+
+  .scrollbar-glass {
+    scrollbar-color: rgba(155, 112, 255, 0.6) rgba(12, 18, 36, 0.7);
+    scrollbar-width: thin;
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(9, 14, 30, 0.85);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(120, 168, 255, 0.7), rgba(155, 112, 255, 0.75));
+  border-radius: 999px;
+  border: 3px solid rgba(9, 14, 30, 0.85);
 }
 
 /* @media (prefers-color-scheme: dark) {

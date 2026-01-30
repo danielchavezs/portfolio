@@ -3,6 +3,7 @@ import { projects } from "@/app/assets/seed";
 import { AboutMe } from "@/app/components/aboutMe";
 import Intro from "@/app/components/Intro/Intro";
 import InfiniteSlider from "@/app/components/InfiniteSlider";
+import Loader from "@/app/components/Loader";
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <InfiniteSlider/>
         <ProjectsContainer projects={projects} />
         <AboutMe/>
+        {/* <Loader/> */}
     </main>
   );
 };

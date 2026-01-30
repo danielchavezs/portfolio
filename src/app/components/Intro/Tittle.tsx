@@ -29,8 +29,10 @@ export function Tittle () {
             <h3
               className='text-sm font-semibold uppercase tracking-[0.2em] text-transparent md:text-base'
               style={{ 
-                backgroundImage: 'linear-gradient(90deg, rgba(120,168,255,0.95), rgba(240,158,51,0.85))', 
+                backgroundImage: 'linear-gradient(50deg, #a86ce0, #f09e33)', 
                 backgroundClip: 'text',
+                letterSpacing: '2px',
+                textShadow: '2px 2px 4px rgba(255, 255, 255, 0.185)',
               }}  
               >AI Engineer | Software Developer</h3>
         </div>
