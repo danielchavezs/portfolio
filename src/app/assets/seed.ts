@@ -2,6 +2,23 @@ import { ProjectsType } from "@/app/assets/types";
 
 export const projects: ProjectsType = [
     {
+        id: 9,
+        name: "Droidforce",
+        cover: "/projects/9/home_summary.png",
+        gallery: [
+            "/projects/9/home_summary.png",
+            "/projects/9/templates_dashboard.png",
+            "/projects/9/actions_table.png",
+            "/projects/9/action_policies_control.png",
+            "/projects/9/automations_control.png",
+            "/projects/9/knowledgebases_gates.png"
+        ],
+        mobileGallery: [],
+        shortDescription: "Enterprise Agentic support platform delivering RAG-driven answers, automated workflows, and policy-based resolution at scale.",
+        fullDescription: "Key developer for DroidForce, an AI-driven support platform used by an enterprise client in Europe. I helped design and implement a three-stage system that begins with a domain-specific knowledge base and RAG-style assistant built over internal documentation, historical tickets and expert know-how; evolves into human-in-the-loop automations for tasks such as ticket summarization, classification and closure; and, once quality thresholds are met, promotes those workflows to fully autonomous policies. The solution combines LLMs, retrieval pipelines and agentic orchestration to streamline support operations, achieving around 95% response accuracy, 66% faster resolution times and 24/7 coverage, while freeing the support team to focus on complex, high-value cases. I contributed across the stack, from API and vector search design to workflow rules and iterative refinements based on user feedback.",
+        date: "July 2025 - Present"
+    },
+    {
         id: 8,
         name: "Verify Influencers",
         cover: "/projects/8/cover.png",
