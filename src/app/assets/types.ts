@@ -32,6 +32,8 @@ export type ProjectType = {
     fullDescription: string;
     href?: string;
     date: string;
+    isFeatured?: boolean; // visually emphasized projects
+    isSecret?: boolean; // if the project is secret, it will not be displayed in the projects section
 }
 
 // export type ProjectProps = ProjectType{};

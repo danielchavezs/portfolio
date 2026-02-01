@@ -16,11 +16,12 @@ export const projects: ProjectsType = [
         mobileGallery: [],
         shortDescription: "Enterprise Agentic support platform delivering RAG-driven answers, automated workflows, and policy-based resolution at scale.",
         fullDescription: "Key developer for DroidForce, an AI-driven support platform used by an enterprise client in Europe. I helped design and implement a three-stage system that begins with a domain-specific knowledge base and RAG-style assistant built over internal documentation, historical tickets and expert know-how; evolves into human-in-the-loop automations for tasks such as ticket summarization, classification and closure; and, once quality thresholds are met, promotes those workflows to fully autonomous policies.\n\nThe solution combines LLMs, retrieval pipelines and agentic orchestration to streamline support operations, achieving around 95% response accuracy, 66% faster resolution times and 24/7 coverage, while freeing the support team to focus on complex, high-value cases. I contributed across the stack, from API and vector search design to workflow rules and iterative refinements based on user feedback.",
-        date: "July 2025 - Present"
+        date: "July 2025 - Present",
+        isFeatured: true,
     },{
         id: 9,
         name: "Undisclosed - under development",
-        cover: "/projects/9/landing_provider.png",
+        cover: "/projects/9/admin_panel.png",
         gallery: [
             "/projects/9/landing_provider.png",
             "/projects/9/store.png",
@@ -32,7 +33,9 @@ export const projects: ProjectsType = [
         mobileGallery: [],
         shortDescription: "Scalable marketplace platform with provider tooling, admin workflows, and role-gated operations built for long-term growth.",
         fullDescription: "This undisclosed project is an advanced, production‑minded platform for Colombia’s adult services market built on Next.js, React 19, TypeScript, and Supabase. It follows a clear 3‑layer architecture (Application → Feature → Sources) that separates UI, business logic, and data operations, with dedicated browser/server/public Supabase clients. Rendering is intentionally mixed (SSR/ISR/CSR) to balance SEO, performance, and personalization—public discovery routes use ISR, while authenticated areas rely on SSR and client islands.\n\nBeyond the architecture, the product scope is broad and non‑trivial: provider profiles, post publishing, media moderation workflows, favorites, admin dashboards, and a role system with admin/moderator gating layered on top of RLS‑protected Postgres tables. Complex relations are typed end‑to‑end, migrations are versioned, and business logic is centralized in the Features layer for validation, orchestration, and logging. The result is a scalable, maintainable codebase that prioritizes security, data integrity, and future growth.\n\nNote: UI is in alpha, since final designs have not been defined by the company yet.",
-        date: "October 2025 - Present"
+        date: "October 2025 - Present",
+        isFeatured: true,
+        isSecret: true
     },
     {
         id: 8,
@@ -47,7 +50,8 @@ export const projects: ProjectsType = [
         shortDescription: "AI credibility scoring platform for health influencers using Next.js, MongoDB, and the Perplexity API.",
         fullDescription: "Verify Influencers is a full-stack web app built with Next.js 15, Tailwind CSS, and MongoDB, designed to analyze and rank health influencers based on AI-powered credibility assessments. It integrates the Perplexity API to extract and structure claims, leveraging SSR for SEO and performance, while implementing CSR for interactivity, with React Suspense and Server Actions optimizing data handling. The backend, powered by Mongoose, enables advanced filtering and sorting. Tailwind CSS ensures a responsive UI, while streaming enhances performance for a seamless user experience. Combining AI, data processing, and modern web techniques, this app showcases strong full-stack development skills.",
         href: "https://verify-influencers-alpha.vercel.app/",
-        date: "January to February - 2025"
+        date: "January to February - 2025",
+        isFeatured: true,
     },
     // {
     //     id: 7,

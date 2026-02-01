@@ -85,7 +85,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 </a>
               ) : (
                 <span className="rounded-full border border-dashed border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-300">
-                  Not available
+                  URL Not available
                 </span>
               )}
             </div>
