@@ -2,21 +2,37 @@ import { ProjectsType } from "@/app/assets/types";
 
 export const projects: ProjectsType = [
     {
-        id: 9,
+        id: 10,
         name: "Droidforce",
-        cover: "/projects/9/home_summary.png",
+        cover: "/projects/10/home_summary.png",
         gallery: [
-            "/projects/9/home_summary.png",
-            "/projects/9/templates_dashboard.png",
-            "/projects/9/actions_table.png",
-            "/projects/9/action_policies_control.png",
-            "/projects/9/automations_control.png",
-            "/projects/9/knowledgebases_gates.png"
+            "/projects/10/home_summary.png",
+            "/projects/10/templates_dashboard.png",
+            "/projects/10/actions_table.png",
+            "/projects/10/action_policies_control.png",
+            "/projects/10/automations_control.png",
+            "/projects/10/knowledgebases_gates.png"
         ],
         mobileGallery: [],
         shortDescription: "Enterprise Agentic support platform delivering RAG-driven answers, automated workflows, and policy-based resolution at scale.",
-        fullDescription: "Key developer for DroidForce, an AI-driven support platform used by an enterprise client in Europe. I helped design and implement a three-stage system that begins with a domain-specific knowledge base and RAG-style assistant built over internal documentation, historical tickets and expert know-how; evolves into human-in-the-loop automations for tasks such as ticket summarization, classification and closure; and, once quality thresholds are met, promotes those workflows to fully autonomous policies. The solution combines LLMs, retrieval pipelines and agentic orchestration to streamline support operations, achieving around 95% response accuracy, 66% faster resolution times and 24/7 coverage, while freeing the support team to focus on complex, high-value cases. I contributed across the stack, from API and vector search design to workflow rules and iterative refinements based on user feedback.",
+        fullDescription: "Key developer for DroidForce, an AI-driven support platform used by an enterprise client in Europe. I helped design and implement a three-stage system that begins with a domain-specific knowledge base and RAG-style assistant built over internal documentation, historical tickets and expert know-how; evolves into human-in-the-loop automations for tasks such as ticket summarization, classification and closure; and, once quality thresholds are met, promotes those workflows to fully autonomous policies.\n\nThe solution combines LLMs, retrieval pipelines and agentic orchestration to streamline support operations, achieving around 95% response accuracy, 66% faster resolution times and 24/7 coverage, while freeing the support team to focus on complex, high-value cases. I contributed across the stack, from API and vector search design to workflow rules and iterative refinements based on user feedback.",
         date: "July 2025 - Present"
+    },{
+        id: 9,
+        name: "Undisclosed - under development",
+        cover: "/projects/9/landing_provider.png",
+        gallery: [
+            "/projects/9/landing_provider.png",
+            "/projects/9/store.png",
+            "/projects/9/shoppig_cart.png",
+            "/projects/9/suscription.png",
+            "/projects/9/wallet.png",
+            "/projects/9/admin_panel.png"
+        ],
+        mobileGallery: [],
+        shortDescription: "Scalable marketplace platform with provider tooling, admin workflows, and role-gated operations built for long-term growth.",
+        fullDescription: "This undisclosed project is an advanced, production‑minded platform for Colombia’s adult services market built on Next.js, React 19, TypeScript, and Supabase. It follows a clear 3‑layer architecture (Application → Feature → Sources) that separates UI, business logic, and data operations, with dedicated browser/server/public Supabase clients. Rendering is intentionally mixed (SSR/ISR/CSR) to balance SEO, performance, and personalization—public discovery routes use ISR, while authenticated areas rely on SSR and client islands.\n\nBeyond the architecture, the product scope is broad and non‑trivial: provider profiles, post publishing, media moderation workflows, favorites, admin dashboards, and a role system with admin/moderator gating layered on top of RLS‑protected Postgres tables. Complex relations are typed end‑to‑end, migrations are versioned, and business logic is centralized in the Features layer for validation, orchestration, and logging. The result is a scalable, maintainable codebase that prioritizes security, data integrity, and future growth.\n\nNote: UI is in alpha, since final designs have not been defined by the company yet.",
+        date: "October 2025 - Present"
     },
     {
         id: 8,

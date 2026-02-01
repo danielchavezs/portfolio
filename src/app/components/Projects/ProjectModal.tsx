@@ -72,7 +72,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           />
 
           <div className="space-y-4 text-sm leading-relaxed text-slate-200 md:text-base">
-            <p>{project.fullDescription}</p>
+            <p className="whitespace-pre-line">{project.fullDescription}</p>
             <div className="flex flex-wrap items-center gap-3">
               {project.href ? (
                 <a
